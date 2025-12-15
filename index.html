@@ -480,7 +480,7 @@
                     </div>
                 </button>
                 
-                <!-- 8. 문의 & 스토어 -->
+                <!-- 7. 문의 & 스토어 -->
                 <button onclick="openSection('store')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-gray-500 group relative overflow-hidden">
                     <div class="w-16 h-16 rounded-xl bg-gray-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
                         <img src="Clipped_image_20240831_153256.jpg" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
@@ -491,184 +491,6 @@
                         <p class="text-xs text-gray-500">웹스토어, 문의</p>
                     </div>
                 </button>
-            </div>
-        </section>
-
-        <!-- NEW: 시스템 공략 (Merged Section with Folder Navigation) -->
-        <section id="systems" class="hidden page-enter">
-            <div class="flex items-center justify-between mb-6">
-                <button onclick="goHome()" class="flex items-center gap-2 text-gray-500 hover:text-brand-500 transition-colors">
-                    <i class="fas fa-arrow-left"></i> <span class="font-bold text-sm">뒤로가기</span>
-                </button>
-                <h2 class="text-2xl font-display text-gray-800 dark:text-white">시스템 가이드</h2>
-                <div class="w-10"></div> <!-- Spacer -->
-            </div>
-            
-            <!-- Folder Tabs (Quick Navigation) -->
-            <div class="flex gap-2 overflow-x-auto pb-4 mb-4 scrollbar-hide snap-x">
-                <button onclick="scrollToId('village')" class="snap-start flex-shrink-0 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-emerald-200 transition">
-                    <i class="fas fa-home mr-1"></i> 마을
-                </button>
-                <button onclick="scrollToId('dimension')" class="snap-start flex-shrink-0 bg-purple-100 text-purple-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-purple-200 transition">
-                    <i class="fas fa-cube mr-1"></i> 차원
-                </button>
-                <button onclick="scrollToId('tower')" class="snap-start flex-shrink-0 bg-orange-100 text-orange-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-orange-200 transition">
-                    <i class="fas fa-dungeon mr-1"></i> 도탑
-                </button>
-                <button onclick="scrollToId('hidden')" class="snap-start flex-shrink-0 bg-gray-200 text-gray-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-gray-300 transition">
-                    <i class="fas fa-door-open mr-1"></i> 방울
-                </button>
-                <button onclick="scrollToId('medal')" class="snap-start flex-shrink-0 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-yellow-200 transition">
-                    <i class="fas fa-medal mr-1"></i> 메달
-                </button>
-                <!-- New Trophy Tab -->
-                <button onclick="scrollToId('trophy')" class="snap-start flex-shrink-0 bg-yellow-400 text-yellow-900 px-4 py-2 rounded-xl font-bold text-sm hover:bg-yellow-500 transition">
-                    <i class="fas fa-trophy mr-1"></i> 트로피
-                </button>
-            </div>
-
-            <div class="space-y-8">
-                
-                <!-- 고양이 마을 -->
-                <div id="village" class="glass-card p-6 rounded-3xl border-l-4 border-emerald-500 scroll-mt-24">
-                    <h3 class="font-bold text-xl mb-4 text-emerald-600 flex items-center"><i class="fas fa-home mr-2"></i>고양이 마을</h3>
-                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
-                        <p>고양이 상자를 해금하면 보석과 망치를 획득합니다. 망치로 회관과 동상을 업그레이드하세요.</p>
-                        <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-xl">
-                            <h4 class="font-bold mb-2 text-emerald-700 dark:text-emerald-400">💎 운석 파편 1티어 옵션</h4>
-                            <ul class="space-y-1 list-disc list-inside text-xs md:text-sm">
-                                <li><strong>피해의 파편:</strong> 모든 피해량 증가</li>
-                                <li><strong>보호의 파편:</strong> 최대 체력 증폭, 최대 체력 증가</li>
-                                <li><strong>특화의 파편:</strong> 덱에 맞는 데미지 증가</li>
-                                <li><strong>집중의 파편:</strong> 길드 레이드/점령전 피해량 증가</li>
-                                <li><strong>대결의 파편:</strong> PvP 명중, PvP 회피</li>
-                                <li><strong>풍요의 파편:</strong> 격전지 점수 추가</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 차원의 공간 -->
-                <div id="dimension" class="glass-card p-6 rounded-3xl border-l-4 border-purple-500 scroll-mt-24">
-                    <h3 class="font-bold text-xl mb-4 text-purple-600 flex items-center"><i class="fas fa-cube mr-2"></i>차원의 공간</h3>
-                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
-                        <p>격전지 장비로 능력치를 올립니다. 5단계 달성 시 열리는 중요 효과들입니다.</p>
-                        <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-xl">
-                            <h4 class="font-bold mb-2 text-purple-700 dark:text-purple-400">⚡ 주요 장비 5단계 효과</h4>
-                            <ul class="space-y-2 text-xs md:text-sm">
-                                <li><strong>고급 망원경:</strong> 길드열쇠 획득 +1</li>
-                                <li><strong>단단한 투구 / 코크 L:</strong> 서브룬 칸 +1</li>
-                                <li><strong>용의 알 껍질:</strong> 메인룬 칸 +1</li>
-                                <li><strong>늑대 / 음식 정령석:</strong> 마력 +1</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 도전의 탑 -->
-                <div id="tower" class="glass-card p-6 rounded-3xl border-l-4 border-orange-500 scroll-mt-24">
-                    <h3 class="font-bold text-xl mb-4 text-orange-600 flex items-center"><i class="fas fa-dungeon mr-2"></i>도전의 탑</h3>
-                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
-                        <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg text-xs">
-                            <strong>Tip:</strong> 옵션은 중첩될수록 효과가 커집니다 (곱연산).<br>
-                            * 단, 발동확률/추가시전/동료레벨/회복량 등은 합연산.<br>
-                            * 일부 버프/디버프 스킬에는 계수 증가가 적용되지 않습니다.
-                        </div>
-                        <div class="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-xl">
-                            <h4 class="font-bold mb-2 text-orange-700 dark:text-orange-400">🏆 도탑 옵션 티어</h4>
-                            <ol class="space-y-1 list-decimal list-inside text-xs md:text-sm font-bold">
-                                <li>스킬 강화 효과 (예: 고래함선 강화 등)</li>
-                                <li>동료 레벨 40 증가</li>
-                                <li>[타입] 최종 데미지 증가</li>
-                                <li>모든 스킬 피해량 증가 >= 쿨타임 감소</li>
-                                <li>계수 증가</li>
-                            </ol>
-                            <p class="text-xs text-gray-500 mt-2">* 전설 등급 중첩이 안전빵입니다.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 숨겨진 방 -->
-                <div id="hidden" class="glass-card p-6 rounded-3xl border-l-4 border-gray-500 scroll-mt-24">
-                    <h3 class="font-bold text-xl mb-4 text-gray-600 dark:text-gray-400 flex items-center"><i class="fas fa-door-open mr-2"></i>숨겨진 방 (방울)</h3>
-                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
-                        <p class="text-xs bg-gray-100 dark:bg-gray-800 p-2 rounded"><strong>조건:</strong> 치명타 확률 130% 확보 기준 (미달 시 치확 1순위)</p>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs md:text-sm">
-                            <div class="bg-gray-50 dark:bg-gray-800 p-3 rounded-xl">
-                                <strong class="block mb-1 text-gray-800 dark:text-white">🌑 그림자</strong>
-                                1. 치명타확률<br>2. 생선제작레벨<br>3. 치피 증폭
-                            </div>
-                            <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-xl">
-                                <strong class="block mb-1 text-blue-700 dark:text-blue-300">🐺 늑대 / 🍖 음식</strong>
-                                1. 생선제작레벨<br>2. 치피 증폭
-                            </div>
-                            <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded-xl">
-                                <strong class="block mb-1 text-indigo-700 dark:text-indigo-300">🏴‍☠️ 해적 / ☁️ 구름</strong>
-                                1. 생선제작레벨<br>2. 치뎀 증폭<br>3. 치명타확률
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 메달 강화 -->
-                <div id="medal" class="glass-card p-6 rounded-3xl border-l-4 border-yellow-600 scroll-mt-24">
-                    <h3 class="font-bold text-xl mb-4 text-yellow-600 flex items-center"><i class="fas fa-medal mr-2"></i>메달 강화</h3>
-                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
-                        <ul class="space-y-2 text-xs md:text-sm">
-                            <li><strong class="text-red-500">힘의 메달:</strong> PvP 방어력 관통 (추가 데미지)</li>
-                            <li><strong class="text-blue-500">수호의 메달:</strong> PvP 방어력 (피해 감소)</li>
-                            <li><strong class="text-green-500">투지의 메달:</strong> 격전지 점수 증가 (격추용)</li>
-                            <li><strong class="text-gray-400">영광의 메달:</strong> 길드전 점수 (비추천)</li>
-                        </ul>
-                        <div class="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-xl text-center font-bold">
-                            <span class="block mb-1">PvP 유저 👉 힘 + 수호</span>
-                            <span class="block">격추 유저 👉 투지</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hidden Trophies (NEW) -->
-                <div id="trophy" class="glass-card p-6 rounded-3xl border-l-4 border-yellow-400 scroll-mt-24">
-                    <h3 class="font-bold text-xl mb-4 text-yellow-500 flex items-center"><i class="fas fa-trophy mr-2"></i>히든 트로피</h3>
-                    
-                    <div class="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-xl mb-4 border border-yellow-200 dark:border-yellow-700">
-                         <p class="text-xs text-yellow-800 dark:text-yellow-200 font-bold text-center">
-                             ⚠️ 주의: 내용이 정확하지 않을 수 있습니다.
-                         </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm text-gray-700 dark:text-gray-300">
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>어항 수집가:</strong> 어항 충전 키트 누적 10만개</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>진짜 VIP:</strong> VIP 블랙 이상</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>행운아:</strong> 전설 룬 획득</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>베스트 프렌드:</strong> 친구 20명</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>대포 수집가:</strong> 대포 24종</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>스킬 수집가:</strong> 스킬 33종</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>동료 수집가:</strong> 동료 46종</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>탈것 수집가:</strong> 탈것 15종</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>마을 수비대:</strong> 마을 방어 20회</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>약탈 왕:</strong> 마을 약탈 50회</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>심술궂은 고양씨:</strong> 마을 못 30회</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>친절한 고양씨:</strong> 마을 도움 100회</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>파괴 왕:</strong> 장비 분해 20회</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>마이다스 손:</strong> 장비 합성 30회 실패</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>금 손:</strong> 장비 합성 10회 성공(등급업)</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>레전더리:</strong> 전설 장비 획득</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>차원의 지배자:</strong> 차원의 공간 100%</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>다이아 갑부:</strong> 누적 1,000만 다이아</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>이등병:</strong> 모든 골드 훈련 완료</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>리뷰어:</strong> 별점 주기 30회 이상</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>이장님:</strong> 고양이 회관 30레벨</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>보물찾기 1/2:</strong> 히든 트로피 10/15개</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>Top 100~1:</strong> 스테이지 랭킹 달성</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>미니게임 고수:</strong> 퍼펙트 클리어 100회</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>초보 연금술사:</strong> 연금술 10회 시도</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>기분 나쁜 연금술사:</strong> 연금술 10회 실패</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>기분 좋은 연금술사:</strong> 연금술 10회 성공</div>
-                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>정답이다, 연금술사:</strong> 연금술 50회 성공</div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -1099,6 +921,220 @@
             </div>
         </section>
 
+        <!-- NEW: 시스템 공략 (Merged Section with Folder Navigation) -->
+        <section id="systems" class="hidden page-enter">
+            <div class="flex items-center justify-between mb-6">
+                <button onclick="goHome()" class="flex items-center gap-2 text-gray-500 hover:text-brand-500 transition-colors">
+                    <i class="fas fa-arrow-left"></i> <span class="font-bold text-sm">뒤로가기</span>
+                </button>
+                <h2 class="text-2xl font-display text-gray-800 dark:text-white">시스템 가이드</h2>
+                <div class="w-10"></div> <!-- Spacer -->
+            </div>
+            
+            <!-- Folder Tabs (Quick Navigation) -->
+            <div class="flex gap-2 overflow-x-auto pb-4 mb-4 scrollbar-hide snap-x">
+                <button onclick="scrollToId('guildwar')" class="snap-start flex-shrink-0 bg-red-100 text-red-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-red-200 transition">
+                    <i class="fas fa-fist-raised mr-1"></i> 길드전
+                </button>
+                <button onclick="scrollToId('village')" class="snap-start flex-shrink-0 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-emerald-200 transition">
+                    <i class="fas fa-home mr-1"></i> 마을
+                </button>
+                <button onclick="scrollToId('dimension')" class="snap-start flex-shrink-0 bg-purple-100 text-purple-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-purple-200 transition">
+                    <i class="fas fa-cube mr-1"></i> 차원
+                </button>
+                <button onclick="scrollToId('tower')" class="snap-start flex-shrink-0 bg-orange-100 text-orange-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-orange-200 transition">
+                    <i class="fas fa-dungeon mr-1"></i> 도탑
+                </button>
+                <button onclick="scrollToId('hidden')" class="snap-start flex-shrink-0 bg-gray-200 text-gray-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-gray-300 transition">
+                    <i class="fas fa-door-open mr-1"></i> 방울
+                </button>
+                <button onclick="scrollToId('medal')" class="snap-start flex-shrink-0 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-yellow-200 transition">
+                    <i class="fas fa-medal mr-1"></i> 메달
+                </button>
+                <button onclick="scrollToId('trophy')" class="snap-start flex-shrink-0 bg-yellow-400 text-yellow-900 px-4 py-2 rounded-xl font-bold text-sm hover:bg-yellow-500 transition">
+                    <i class="fas fa-trophy mr-1"></i> 트로피
+                </button>
+            </div>
+
+            <div class="space-y-8">
+                
+                <!-- 길드전 상금 분석 -->
+                <div id="guildwar" class="glass-card p-6 rounded-3xl border-l-4 border-red-500 scroll-mt-24">
+                    <h3 class="font-bold text-xl mb-4 text-red-600 flex items-center"><i class="fas fa-fist-raised mr-2"></i>길드전 상금 분석</h3>
+                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <p class="text-sm">이번에 새롭게 추가되는 길드전 콘텐츠의 보상 규정을 보고 예시 서버 누적 상금을 기준으로 분석해 보았습니다.</p>
+                        
+                        <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-xl border border-red-200 dark:border-red-700/50">
+                            <h4 class="font-bold text-red-700 dark:text-red-400 mb-2">💰 예시 서버 상금 기준 분석 (누적 219,251 블다)</h4>
+                            <ul class="space-y-1 list-disc list-inside text-xs md:text-sm">
+                                <li><strong>총 상금:</strong> 219,251</li>
+                                <li><strong>메인 성 점령 (40%):</strong> 87,700</li>
+                                <li><strong>일반 성 점령 (10%):</strong> 21,925</li>
+                                <li><strong>일반 성 몬스터 처치 (1% 딜):</strong> 65 블다</li>
+                                <li><strong>메인 성 몬스터 처치 (1% 딜):</strong> 175 블다</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg text-xs md:text-sm leading-relaxed">
+                            <strong class="block mb-2 text-indigo-600 dark:text-indigo-400">💡 핵심 포인트</strong>
+                            <p class="mb-2">성 점령 여부와 관계없이 <strong>몬스터에게 피해를 입히는 것만으로도 블다를 획득</strong>할 수 있습니다.</p>
+                            <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-1">
+                                <li>일반 성 몬스터 피해 10% = <strong>650 블다</strong> 획득</li>
+                                <li>3% 딜(약 3번 공격)만 넣어도 <strong>600 블다 이상</strong> 이득 가능</li>
+                                <li>상금 규모가 큰 서버는 몬스터 처치만으로 1000 블다 이상 가능</li>
+                            </ul>
+                        </div>
+
+                        <p class="text-xs text-gray-500 mt-2">
+                            * 길드전 종료 시 성을 점령하면 추가 상금까지 획득 가능하므로 참여 가치가 매우 높습니다.<br>
+                            * 추후 서버 이전 시 <strong>누적 상금이 높은 서버</strong>를 선택하는 것이 유리할 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 고양이 마을 -->
+                <div id="village" class="glass-card p-6 rounded-3xl border-l-4 border-emerald-500 scroll-mt-24">
+                    <h3 class="font-bold text-xl mb-4 text-emerald-600 flex items-center"><i class="fas fa-home mr-2"></i>고양이 마을</h3>
+                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <p>고양이 상자를 해금하면 보석과 망치를 획득합니다. 망치로 회관과 동상을 업그레이드하세요.</p>
+                        <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-xl">
+                            <h4 class="font-bold mb-2 text-emerald-700 dark:text-emerald-400">💎 운석 파편 1티어 옵션</h4>
+                            <ul class="space-y-1 list-disc list-inside text-xs md:text-sm">
+                                <li><strong>피해의 파편:</strong> 모든 피해량 증가</li>
+                                <li><strong>보호의 파편:</strong> 최대 체력 증폭, 최대 체력 증가</li>
+                                <li><strong>특화의 파편:</strong> 덱에 맞는 데미지 증가</li>
+                                <li><strong>집중의 파편:</strong> 길드 레이드/점령전 피해량 증가</li>
+                                <li><strong>대결의 파편:</strong> PvP 명중, PvP 회피</li>
+                                <li><strong>풍요의 파편:</strong> 격전지 점수 추가</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 차원의 공간 -->
+                <div id="dimension" class="glass-card p-6 rounded-3xl border-l-4 border-purple-500 scroll-mt-24">
+                    <h3 class="font-bold text-xl mb-4 text-purple-600 flex items-center"><i class="fas fa-cube mr-2"></i>차원의 공간</h3>
+                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <p>격전지 장비로 능력치를 올립니다. 5단계 달성 시 열리는 중요 효과들입니다.</p>
+                        <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-xl">
+                            <h4 class="font-bold mb-2 text-purple-700 dark:text-purple-400">⚡ 주요 장비 5단계 효과</h4>
+                            <ul class="space-y-2 text-xs md:text-sm">
+                                <li><strong>고급 망원경:</strong> 길드열쇠 획득 +1</li>
+                                <li><strong>단단한 투구 / 코크 L:</strong> 서브룬 칸 +1</li>
+                                <li><strong>용의 알 껍질:</strong> 메인룬 칸 +1</li>
+                                <li><strong>늑대 / 음식 정령석:</strong> 마력 +1</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 도전의 탑 -->
+                <div id="tower" class="glass-card p-6 rounded-3xl border-l-4 border-orange-500 scroll-mt-24">
+                    <h3 class="font-bold text-xl mb-4 text-orange-600 flex items-center"><i class="fas fa-dungeon mr-2"></i>도전의 탑</h3>
+                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg text-xs">
+                            <strong>Tip:</strong> 옵션은 중첩될수록 효과가 커집니다 (곱연산).<br>
+                            * 단, 발동확률/추가시전/동료레벨/회복량 등은 합연산.<br>
+                            * 일부 버프/디버프 스킬에는 계수 증가가 적용되지 않습니다.
+                        </div>
+                        <div class="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-xl">
+                            <h4 class="font-bold mb-2 text-orange-700 dark:text-orange-400">🏆 도탑 옵션 티어</h4>
+                            <ol class="space-y-1 list-decimal list-inside text-xs md:text-sm font-bold">
+                                <li>스킬 강화 효과 (예: 고래함선 강화 등)</li>
+                                <li>동료 레벨 40 증가</li>
+                                <li>[타입] 최종 데미지 증가</li>
+                                <li>모든 스킬 피해량 증가 >= 쿨타임 감소</li>
+                                <li>계수 증가</li>
+                            </ol>
+                            <p class="text-xs text-gray-500 mt-2">* 전설 등급 중첩이 안전빵입니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 숨겨진 방 -->
+                <div id="hidden" class="glass-card p-6 rounded-3xl border-l-4 border-gray-500 scroll-mt-24">
+                    <h3 class="font-bold text-xl mb-4 text-gray-600 dark:text-gray-400 flex items-center"><i class="fas fa-door-open mr-2"></i>숨겨진 방 (방울)</h3>
+                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <p class="text-xs bg-gray-100 dark:bg-gray-800 p-2 rounded"><strong>조건:</strong> 치명타 확률 130% 확보 기준 (미달 시 치확 1순위)</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs md:text-sm">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-3 rounded-xl">
+                                <strong class="block mb-1 text-gray-800 dark:text-white">🌑 그림자</strong>
+                                1. 치명타확률<br>2. 생선제작레벨<br>3. 치피 증폭
+                            </div>
+                            <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-xl">
+                                <strong class="block mb-1 text-blue-700 dark:text-blue-300">🐺 늑대 / 🍖 음식</strong>
+                                1. 생선제작레벨<br>2. 치피 증폭
+                            </div>
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded-xl">
+                                <strong class="block mb-1 text-indigo-700 dark:text-indigo-300">🏴‍☠️ 해적 / ☁️ 구름</strong>
+                                1. 생선제작레벨<br>2. 치뎀 증폭<br>3. 치명타확률
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 메달 강화 -->
+                <div id="medal" class="glass-card p-6 rounded-3xl border-l-4 border-yellow-600 scroll-mt-24">
+                    <h3 class="font-bold text-xl mb-4 text-yellow-600 flex items-center"><i class="fas fa-medal mr-2"></i>메달 강화</h3>
+                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <ul class="space-y-2 text-xs md:text-sm">
+                            <li><strong class="text-red-500">힘의 메달:</strong> PvP 방어력 관통 (추가 데미지)</li>
+                            <li><strong class="text-blue-500">수호의 메달:</strong> PvP 방어력 (피해 감소)</li>
+                            <li><strong class="text-green-500">투지의 메달:</strong> 격전지 점수 증가 (격추용)</li>
+                            <li><strong class="text-gray-400">영광의 메달:</strong> 길드전 점수 (비추천)</li>
+                        </ul>
+                        <div class="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-xl text-center font-bold">
+                            <span class="block mb-1">PvP 유저 👉 힘 + 수호</span>
+                            <span class="block">격추 유저 👉 투지</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hidden Trophies (NEW) -->
+                <div id="trophy" class="glass-card p-6 rounded-3xl border-l-4 border-yellow-400 scroll-mt-24">
+                    <h3 class="font-bold text-xl mb-4 text-yellow-500 flex items-center"><i class="fas fa-trophy mr-2"></i>히든 트로피</h3>
+                    
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-xl mb-4 border border-yellow-200 dark:border-yellow-700">
+                         <p class="text-xs text-yellow-800 dark:text-yellow-200 font-bold text-center">
+                             ⚠️ 주의: 내용이 정확하지 않을 수 있습니다.
+                         </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm text-gray-700 dark:text-gray-300">
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>어항 수집가:</strong> 어항 충전 키트 누적 10만개</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>진짜 VIP:</strong> VIP 블랙 이상</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>행운아:</strong> 전설 룬 획득</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>베스트 프렌드:</strong> 친구 20명</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>대포 수집가:</strong> 대포 24종</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>스킬 수집가:</strong> 스킬 33종</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>동료 수집가:</strong> 동료 46종</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>탈것 수집가:</strong> 탈것 15종</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>마을 수비대:</strong> 마을 방어 20회</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>약탈 왕:</strong> 마을 약탈 50회</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>심술궂은 고양씨:</strong> 마을 못 30회</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>친절한 고양씨:</strong> 마을 도움 100회</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>파괴 왕:</strong> 장비 분해 20회</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>마이다스 손:</strong> 장비 합성 30회 실패</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>금 손:</strong> 장비 합성 10회 성공(등급업)</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>레전더리:</strong> 전설 장비 획득</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>차원의 지배자:</strong> 차원의 공간 100%</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>다이아 갑부:</strong> 누적 1,000만 다이아</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>이등병:</strong> 모든 골드 훈련 완료</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>리뷰어:</strong> 별점 주기 30회 이상</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>이장님:</strong> 고양이 회관 30레벨</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>보물찾기 1/2:</strong> 히든 트로피 10/15개</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>Top 100~1:</strong> 스테이지 랭킹 달성</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>미니게임 고수:</strong> 퍼펙트 클리어 100회</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>초보 연금술사:</strong> 연금술 10회 시도</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>기분 나쁜 연금술사:</strong> 연금술 10회 실패</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>기분 좋은 연금술사:</strong> 연금술 10회 성공</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>정답이다, 연금술사:</strong> 연금술 50회 성공</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <!-- 7. 문의 & 스토어 -->
         <section id="store" class="hidden page-enter">
             <button onclick="goHome()" class="mb-4 flex items-center gap-2 text-gray-500 hover:text-brand-500 transition-colors">
@@ -1145,7 +1181,7 @@
     </main>
 
     <script>
-        // --- 1. DATA CONSTANTS (Declared FIRST to avoid ReferenceError) ---
+        // --- 1. DATA CONSTANTS ---
         const deckData = {
             '1myth': [
                 {
@@ -1448,6 +1484,7 @@
             });
         }
         
+        // --- Copy to Clipboard Function ---
         function copyEmail() {
             const email = "cathero@gameduo.net";
             const textArea = document.createElement("textarea");
@@ -1469,16 +1506,20 @@
             setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
         }
         
+        // --- Calculator Logic ---
         function calculateScore() {
             const input = document.getElementById('calc-percent');
             const display = document.getElementById('calc-result');
             const percent = parseFloat(input.value);
+            
             const BASE_SCORE = 85500;
             const SCORE_PER_PERCENT = 300;
+            
             if (isNaN(percent)) {
                 display.innerText = "85,500 점";
                 return;
             }
+            
             const score = (percent * SCORE_PER_PERCENT) + BASE_SCORE;
             display.innerText = score.toLocaleString() + " 점";
         }
