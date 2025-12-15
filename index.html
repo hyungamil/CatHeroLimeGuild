@@ -160,43 +160,6 @@
             max-width: 360px;
         }
 
-        /* Roulette Styles */
-        #roulette-canvas {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transition: transform 4s cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
-        .pointer {
-            width: 0; 
-            height: 0; 
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 20px solid #ef4444;
-            position: absolute;
-            top: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
-        }
-        
-        /* Ladder Styles */
-        .ladder-scroll-container {
-            overflow-x: auto;
-            white-space: nowrap;
-            padding-bottom: 10px;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            background: #fff;
-        }
-        .dark .ladder-scroll-container {
-            background: #1f2937;
-            border-color: #374151;
-        }
-
         /* Character Card Image Effects */
         .char-img {
             transition: transform 0.3s ease;
@@ -224,7 +187,7 @@
 </head>
 <body class="bg-pattern min-h-screen text-gray-800 transition-colors duration-300 dark:text-gray-100 font-sans overflow-x-hidden readable-text">
 
-    <!-- PASSWORD LOGIN OVERLAY (Option 1) -->
+    <!-- PASSWORD LOGIN OVERLAY -->
     <div id="login-overlay">
         <div class="login-card relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-1 bg-brand-500"></div>
@@ -279,6 +242,9 @@
             <button onclick="openSection('growth')" class="sidebar-btn w-full text-left p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center gap-3 text-gray-600 dark:text-gray-300" data-target="growth">
                 <i class="fas fa-chart-line w-6 text-center"></i> 성장 & VIP
             </button>
+            <button onclick="openSection('systems')" class="sidebar-btn w-full text-left p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center gap-3 text-gray-600 dark:text-gray-300" data-target="systems">
+                <i class="fas fa-cogs w-6 text-center"></i> 시스템 공략
+            </button>
             <button onclick="openSection('guide')" class="sidebar-btn w-full text-left p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center gap-3 text-gray-600 dark:text-gray-300" data-target="guide">
                 <i class="fas fa-book-open w-6 text-center"></i> 상세 공략
             </button>
@@ -288,9 +254,6 @@
             <div class="my-2 border-t border-gray-200 dark:border-gray-700"></div>
             <button onclick="openSection('calculator')" class="sidebar-btn w-full text-left p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center gap-3 text-gray-600 dark:text-gray-300" data-target="calculator">
                 <i class="fas fa-calculator w-6 text-center"></i> 격추 계산기
-            </button>
-            <button onclick="openSection('distribution')" class="sidebar-btn w-full text-left p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center gap-3 text-gray-600 dark:text-gray-300" data-target="distribution">
-                <i class="fas fa-gift w-6 text-center text-pink-500"></i> 분배 도구
             </button>
             <button onclick="openSection('store')" class="sidebar-btn w-full text-left p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center gap-3 text-gray-600 dark:text-gray-300" data-target="store">
                 <i class="fas fa-shopping-bag w-6 text-center"></i> 문의 & 스토어
@@ -324,7 +287,7 @@
         <!-- 0. 홈 화면 -->
         <section id="home-screen" class="page-enter">
             <div class="py-6 md:py-10 flex flex-col md:flex-row items-center gap-6">
-                <!-- Welcome Mascot: Hamster -->
+                <!-- Welcome Mascot -->
                 <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white shadow-xl flex-shrink-0 animate-bounce-slight bg-yellow-100 relative">
                     <img src="Clipped_image_20240831_193214.jpg" onerror="this.style.display='none'" class="w-full h-full object-cover absolute inset-0">
                     <i class="fas fa-paw text-4xl text-yellow-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0" style="display:none"></i>
@@ -334,7 +297,6 @@
                     <h1 class="text-2xl md:text-4xl font-display mb-2 text-gray-800 dark:text-white leading-tight">
                         <span class="text-brand-500">환영합니다!</span><br>캣히어로 완벽 공략집
                     </h1>
-                    
                     <div class="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-50 to-teal-50 dark:from-gray-800 dark:to-gray-800 border border-brand-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 group cursor-default">
                         <span class="text-xs uppercase tracking-wider font-bold text-gray-400 dark:text-gray-500">Created by</span>
                         <span class="font-display text-lg bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-teal-600 dark:from-brand-400 dark:to-teal-400 group-hover:scale-105 transition-transform">늑대벼리</span>
@@ -344,91 +306,243 @@
             </div>
 
             <!-- 대시보드 그리드 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6 mt-6">
-                <!-- 일정 & 미션 (Muscle Cat) -->
-                <button onclick="openSection('schedule')" class="glass-card p-5 md:p-8 rounded-3xl hover:scale-[1.02] transition-all text-left flex md:flex-col items-center md:items-start gap-5 md:gap-4 border-l-[6px] md:border-l-0 md:border-t-[6px] border-blue-500 group relative overflow-hidden">
-                    <div class="w-20 h-20 rounded-2xl bg-blue-100/50 flex-shrink-0 flex items-center justify-center overflow-hidden shadow-inner relative">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 mt-6">
+                <!-- 기존 1. 일정 -->
+                <button onclick="openSection('schedule')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-blue-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-blue-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
                         <img src="Clipped_image_20240831_190611.png" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
-                        <i class="fas fa-calendar-check text-3xl text-blue-400 z-0" style="display:none"></i>
+                        <i class="fas fa-calendar-check text-2xl text-blue-400 z-0" style="display:none"></i>
                     </div>
-                    <div>
-                        <h2 class="font-display text-xl mb-1">일정 & 미션</h2>
-                        <p class="text-sm text-gray-500">뽑기 순서, 합성</p>
+                    <div class="text-center">
+                        <h2 class="font-display text-lg mb-1">일정 & 미션</h2>
+                        <p class="text-xs text-gray-500">뽑기, 합성</p>
                     </div>
                 </button>
 
-                <!-- 성장 & VIP (Pink King Slime) -->
-                <button onclick="openSection('growth')" class="glass-card p-5 md:p-8 rounded-3xl hover:scale-[1.02] transition-all text-left flex md:flex-col items-center md:items-start gap-5 md:gap-4 border-l-[6px] md:border-l-0 md:border-t-[6px] border-yellow-500 group relative overflow-hidden">
-                    <div class="w-20 h-20 rounded-2xl bg-yellow-100/50 flex-shrink-0 flex items-center justify-center overflow-hidden shadow-inner relative">
+                <!-- 기존 2. 성장 -->
+                <button onclick="openSection('growth')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-yellow-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-yellow-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
                         <img src="Clipped_image_20240831_163136.jpg" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
-                        <i class="fas fa-crown text-3xl text-yellow-400 z-0" style="display:none"></i>
+                        <i class="fas fa-crown text-2xl text-yellow-400 z-0" style="display:none"></i>
                     </div>
-                    <div>
-                        <h2 class="font-display text-xl mb-1">성장 & VIP</h2>
-                        <p class="text-sm text-gray-500">녹턴 보상, VIP</p>
+                    <div class="text-center">
+                        <h2 class="font-display text-lg mb-1">성장 & VIP</h2>
+                        <p class="text-xs text-gray-500">녹턴, VIP</p>
                     </div>
-                </button>
-
-                <!-- 상세 공략 (Blue Dragon) -->
-                <button onclick="openSection('guide')" class="glass-card p-5 md:p-8 rounded-3xl hover:scale-[1.02] transition-all text-left flex md:flex-col items-center md:items-start gap-5 md:gap-4 border-l-[6px] md:border-l-0 md:border-t-[6px] border-red-500 group relative overflow-hidden">
-                    <div class="w-20 h-20 rounded-2xl bg-red-100/50 flex-shrink-0 flex items-center justify-center overflow-hidden shadow-inner relative">
-                        <img src="Clipped_image_20240831_192408.png" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
-                        <i class="fas fa-book-open text-3xl text-red-400 z-0" style="display:none"></i>
-                    </div>
-                    <div>
-                        <h2 class="font-display text-xl mb-1">상세 공략</h2>
-                        <p class="text-sm text-gray-500">룬/탈것/장비</p>
-                    </div>
-                </button>
-
-                <!-- 덱 도감 (Tank Cat) -->
-                <button onclick="openSection('deck')" class="glass-card p-5 md:p-8 rounded-3xl hover:scale-[1.02] transition-all text-left flex md:flex-col items-center md:items-start gap-5 md:gap-4 border-l-[6px] md:border-l-0 md:border-t-[6px] border-green-500 group relative overflow-hidden">
-                    <div class="w-20 h-20 rounded-2xl bg-green-100/50 flex-shrink-0 flex items-center justify-center overflow-hidden shadow-inner relative">
-                        <img src="Clipped_image_20240831_153500.jpg" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
-                        <i class="fas fa-layer-group text-3xl text-green-400 z-0" style="display:none"></i>
-                    </div>
-                    <div>
-                        <h2 class="font-display text-xl mb-1">덱 도감</h2>
-                        <p class="text-sm text-gray-500">1~3신화 덱</p>
-                    </div>
-                </button>
-
-                <!-- 격추 계산기 (Monocle Guy) -->
-                <button onclick="openSection('calculator')" class="glass-card p-5 md:p-8 rounded-3xl hover:scale-[1.02] transition-all text-left flex md:flex-col items-center md:items-start gap-5 md:gap-4 border-l-[6px] md:border-l-0 md:border-t-[6px] border-indigo-500 group relative overflow-hidden">
-                    <div class="w-20 h-20 rounded-2xl bg-indigo-100/50 flex-shrink-0 flex items-center justify-center overflow-hidden shadow-inner relative">
-                        <img src="Clipped_image_20240831_192015.png" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
-                        <i class="fas fa-calculator text-3xl text-indigo-400 z-0" style="display:none"></i>
-                    </div>
-                    <div>
-                        <h2 class="font-display text-xl mb-1">격추 계산기</h2>
-                        <p class="text-sm text-gray-500">점수 자동 계산</p>
-                    </div>
-                </button>
-
-                <!-- 분배 도구 (Bear Sunglasses) -->
-                <button onclick="openSection('distribution')" class="glass-card p-5 md:p-8 rounded-3xl hover:scale-[1.02] transition-all text-left flex md:flex-col items-center md:items-start gap-5 md:gap-4 border-l-[6px] md:border-l-0 md:border-t-[6px] border-pink-500 group relative overflow-hidden">
-                    <div class="w-20 h-20 rounded-2xl bg-pink-100/50 flex-shrink-0 flex items-center justify-center overflow-hidden shadow-inner relative">
-                        <img src="Clipped_image_20240831_192903.png" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
-                        <i class="fas fa-gift text-3xl text-pink-400 z-0" style="display:none"></i>
-                    </div>
-                    <div>
-                        <h2 class="font-display text-xl mb-1">분배 도구</h2>
-                        <p class="text-sm text-gray-500">제비뽑기, 룰렛, 사다리</p>
-                    </div>
-                    <span class="absolute top-3 right-3 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full animate-pulse">NEW</span>
                 </button>
                 
-                <!-- 문의 & 스토어 (Whale) -->
-                <button onclick="openSection('store')" class="glass-card p-5 md:p-8 rounded-3xl hover:scale-[1.02] transition-all text-left flex md:flex-col items-center md:items-start gap-5 md:gap-4 border-l-[6px] md:border-l-0 md:border-t-[6px] border-gray-500 group relative overflow-hidden">
-                    <div class="w-20 h-20 rounded-2xl bg-gray-100/50 flex-shrink-0 flex items-center justify-center overflow-hidden shadow-inner relative">
-                        <img src="Clipped_image_20240831_153256.jpg" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
-                        <i class="fas fa-shopping-bag text-3xl text-gray-400 z-0" style="display:none"></i>
+                <!-- NEW 1. 고양이 마을 -->
+                <button onclick="openSection('systems'); scrollToId('village')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-emerald-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-emerald-100/50 flex items-center justify-center shadow-inner text-emerald-500">
+                        <i class="fas fa-home text-3xl"></i>
                     </div>
-                    <div>
-                        <h2 class="font-display text-xl mb-1">문의 & 스토어</h2>
-                        <p class="text-sm text-gray-500">웹스토어, 문의</p>
+                    <div class="text-center">
+                        <h2 class="font-display text-lg mb-1">고양이 마을</h2>
+                        <p class="text-xs text-gray-500">운석, 동상</p>
                     </div>
                 </button>
+
+                <!-- NEW 2. 차원의 공간 -->
+                <button onclick="openSection('systems'); scrollToId('dimension')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-purple-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-purple-100/50 flex items-center justify-center shadow-inner text-purple-500">
+                        <i class="fas fa-cube text-3xl"></i>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="font-display text-lg mb-1">차원의 공간</h2>
+                        <p class="text-xs text-gray-500">장비 효과</p>
+                    </div>
+                </button>
+                
+                <!-- NEW 3. 도전의 탑 -->
+                <button onclick="openSection('systems'); scrollToId('tower')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-orange-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-orange-100/50 flex items-center justify-center shadow-inner text-orange-500">
+                        <i class="fas fa-dungeon text-3xl"></i>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="font-display text-lg mb-1">도전의 탑</h2>
+                        <p class="text-xs text-gray-500">옵션 티어</p>
+                    </div>
+                </button>
+
+                <!-- NEW 4. 숨겨진 방 -->
+                <button onclick="openSection('systems'); scrollToId('hidden')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-gray-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-gray-200/50 flex items-center justify-center shadow-inner text-gray-600">
+                        <i class="fas fa-door-open text-3xl"></i>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="font-display text-lg mb-1">숨겨진 방</h2>
+                        <p class="text-xs text-gray-500">방울 옵션</p>
+                    </div>
+                </button>
+
+                <!-- NEW 5. 메달 강화 -->
+                <button onclick="openSection('systems'); scrollToId('medal')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-yellow-600 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-yellow-100/50 flex items-center justify-center shadow-inner text-yellow-600">
+                        <i class="fas fa-medal text-3xl"></i>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="font-display text-lg mb-1">메달 강화</h2>
+                        <p class="text-xs text-gray-500">PvP/PvE</p>
+                    </div>
+                </button>
+
+                <!-- 기존 3. 상세 공략 -->
+                <button onclick="openSection('guide')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-red-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-red-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
+                        <img src="Clipped_image_20240831_192408.png" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
+                        <i class="fas fa-book-open text-2xl text-red-400 z-0" style="display:none"></i>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="font-display text-lg mb-1">상세 공략</h2>
+                        <p class="text-xs text-gray-500">룬/탈것/장비</p>
+                    </div>
+                </button>
+
+                <!-- 기존 4. 덱 도감 -->
+                <button onclick="openSection('deck')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-green-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-green-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
+                        <img src="Clipped_image_20240831_153500.jpg" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
+                        <i class="fas fa-layer-group text-2xl text-green-400 z-0" style="display:none"></i>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="font-display text-lg mb-1">덱 도감</h2>
+                        <p class="text-xs text-gray-500">1~3신화 덱</p>
+                    </div>
+                </button>
+
+                <!-- 기존 5. 격추 계산기 -->
+                <button onclick="openSection('calculator')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-indigo-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-indigo-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
+                        <img src="Clipped_image_20240831_192015.png" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
+                        <i class="fas fa-calculator text-2xl text-indigo-400 z-0" style="display:none"></i>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="font-display text-lg mb-1">격추 계산기</h2>
+                        <p class="text-xs text-gray-500">점수 자동 계산</p>
+                    </div>
+                </button>
+                
+                <!-- 기존 7. 문의 & 스토어 -->
+                <button onclick="openSection('store')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-gray-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-gray-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
+                        <img src="Clipped_image_20240831_153256.jpg" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
+                        <i class="fas fa-shopping-bag text-2xl text-gray-400 z-0" style="display:none"></i>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="font-display text-lg mb-1">문의 & 스토어</h2>
+                        <p class="text-xs text-gray-500">웹스토어, 문의</p>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <!-- NEW: 시스템 공략 (Merged Section) -->
+        <section id="systems" class="hidden page-enter">
+            <button onclick="goHome()" class="mb-4 flex items-center gap-2 text-gray-500 hover:text-brand-500 transition-colors">
+                <i class="fas fa-arrow-left"></i> <span class="font-bold text-sm">뒤로가기</span>
+            </button>
+            <h2 class="text-3xl font-display mb-6 md:mb-8 text-gray-800 dark:text-white">시스템 가이드</h2>
+            
+            <div class="space-y-8">
+                
+                <!-- 고양이 마을 -->
+                <div id="village" class="glass-card p-6 rounded-3xl border-l-4 border-emerald-500">
+                    <h3 class="font-bold text-xl mb-4 text-emerald-600 flex items-center"><i class="fas fa-home mr-2"></i>고양이 마을</h3>
+                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <p>고양이 상자를 해금하면 보석과 망치를 획득합니다. 망치로 회관과 동상을 업그레이드하세요.</p>
+                        <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-xl">
+                            <h4 class="font-bold mb-2 text-emerald-700 dark:text-emerald-400">💎 운석 파편 1티어 옵션</h4>
+                            <ul class="space-y-1 list-disc list-inside text-xs md:text-sm">
+                                <li><strong>피해의 파편:</strong> 모든 피해량 증가</li>
+                                <li><strong>보호의 파편:</strong> 최대 체력 증폭, 최대 체력 증가</li>
+                                <li><strong>특화의 파편:</strong> 덱에 맞는 데미지 증가</li>
+                                <li><strong>집중의 파편:</strong> 길드 레이드/점령전 피해량 증가</li>
+                                <li><strong>대결의 파편:</strong> PvP 명중, PvP 회피</li>
+                                <li><strong>풍요의 파편:</strong> 격전지 점수 추가</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 차원의 공간 -->
+                <div id="dimension" class="glass-card p-6 rounded-3xl border-l-4 border-purple-500">
+                    <h3 class="font-bold text-xl mb-4 text-purple-600 flex items-center"><i class="fas fa-cube mr-2"></i>차원의 공간</h3>
+                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <p>격전지 장비로 능력치를 올립니다. 5단계 달성 시 열리는 중요 효과들입니다.</p>
+                        <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-xl">
+                            <h4 class="font-bold mb-2 text-purple-700 dark:text-purple-400">⚡ 주요 장비 5단계 효과</h4>
+                            <ul class="space-y-2 text-xs md:text-sm">
+                                <li><strong>고급 망원경:</strong> 길드열쇠 획득 +1</li>
+                                <li><strong>단단한 투구 / 코크 L:</strong> 서브룬 칸 +1</li>
+                                <li><strong>용의 알 껍질:</strong> 메인룬 칸 +1</li>
+                                <li><strong>늑대 / 음식 정령석:</strong> 마력 +1</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 도전의 탑 -->
+                <div id="tower" class="glass-card p-6 rounded-3xl border-l-4 border-orange-500">
+                    <h3 class="font-bold text-xl mb-4 text-orange-600 flex items-center"><i class="fas fa-dungeon mr-2"></i>도전의 탑</h3>
+                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg text-xs">
+                            <strong>Tip:</strong> 옵션은 중첩될수록 효과가 커집니다 (곱연산).<br>
+                            * 단, 발동확률/추가시전/동료레벨/회복량 등은 합연산.<br>
+                            * 일부 버프/디버프 스킬에는 계수 증가가 적용되지 않습니다.
+                        </div>
+                        <div class="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-xl">
+                            <h4 class="font-bold mb-2 text-orange-700 dark:text-orange-400">🏆 도탑 옵션 티어</h4>
+                            <ol class="space-y-1 list-decimal list-inside text-xs md:text-sm font-bold">
+                                <li>스킬 강화 효과 (예: 고래함선 강화 등)</li>
+                                <li>동료 레벨 40 증가</li>
+                                <li>[타입] 최종 데미지 증가</li>
+                                <li>모든 스킬 피해량 증가 >= 쿨타임 감소</li>
+                                <li>계수 증가</li>
+                            </ol>
+                            <p class="text-xs text-gray-500 mt-2">* 전설 등급 중첩이 안전빵입니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 숨겨진 방 -->
+                <div id="hidden" class="glass-card p-6 rounded-3xl border-l-4 border-gray-500">
+                    <h3 class="font-bold text-xl mb-4 text-gray-600 dark:text-gray-400 flex items-center"><i class="fas fa-door-open mr-2"></i>숨겨진 방 (방울)</h3>
+                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <p class="text-xs bg-gray-100 dark:bg-gray-800 p-2 rounded"><strong>조건:</strong> 치명타 확률 130% 확보 기준 (미달 시 치확 1순위)</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs md:text-sm">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-3 rounded-xl">
+                                <strong class="block mb-1 text-gray-800 dark:text-white">🌑 그림자</strong>
+                                1. 치명타확률<br>2. 생선제작레벨<br>3. 치피 증폭
+                            </div>
+                            <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-xl">
+                                <strong class="block mb-1 text-blue-700 dark:text-blue-300">🐺 늑대 / 🍖 음식</strong>
+                                1. 생선제작레벨<br>2. 치피 증폭
+                            </div>
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded-xl">
+                                <strong class="block mb-1 text-indigo-700 dark:text-indigo-300">🏴‍☠️ 해적 / ☁️ 구름</strong>
+                                1. 생선제작레벨<br>2. 치뎀 증폭<br>3. 치명타확률
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 메달 강화 -->
+                <div id="medal" class="glass-card p-6 rounded-3xl border-l-4 border-yellow-600">
+                    <h3 class="font-bold text-xl mb-4 text-yellow-600 flex items-center"><i class="fas fa-medal mr-2"></i>메달 강화</h3>
+                    <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                        <ul class="space-y-2 text-xs md:text-sm">
+                            <li><strong class="text-red-500">힘의 메달:</strong> PvP 방어력 관통 (추가 데미지)</li>
+                            <li><strong class="text-blue-500">수호의 메달:</strong> PvP 방어력 (피해 감소)</li>
+                            <li><strong class="text-green-500">투지의 메달:</strong> 격전지 점수 증가 (격추용)</li>
+                            <li><strong class="text-gray-400">영광의 메달:</strong> 길드전 점수 (비추천)</li>
+                        </ul>
+                        <div class="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-xl text-center font-bold">
+                            <span class="block mb-1">PvP 유저 👉 힘 + 수호</span>
+                            <span class="block">격추 유저 👉 투지</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -597,8 +711,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- 녹턴 보상 -->
             <div class="glass-card rounded-3xl p-1 border border-gray-200">
                 <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-t-2xl"><h3 class="font-bold">레벨별 녹턴 보상</h3></div>
                 <div class="h-96 overflow-y-auto bg-white dark:bg-gray-900 p-2 rounded-b-2xl">
@@ -654,6 +766,88 @@
                             나무 거북, 졸린 보라버섯 / (신화) 열매나무, 근엄한 국왕
                         </li>
                     </ul>
+                </div>
+            </div>
+
+            <!-- NEW: Auxiliary Runes Guide -->
+            <div class="glass-card p-6 rounded-3xl mt-6 border-t-4 border-purple-500">
+                <h3 class="font-bold text-xl mb-4 text-purple-600 dark:text-purple-400 flex items-center">
+                    <i class="fas fa-gem mr-2"></i> 보조 룬 상세 가이드
+                </h3>
+                
+                <!-- Special Cat Deck Note -->
+                <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-xl mb-6 border border-yellow-200 dark:border-yellow-700/50">
+                    <h4 class="font-bold text-yellow-700 dark:text-yellow-400 mb-2 flex items-center"><i class="fas fa-cat mr-2"></i>고양이 덱 주의사항</h4>
+                    <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                        고양이 덱은 고양이 동료 자체의 스킬계수 증가 효과가 없어 룬으로 스킬계수 증가를 챙겨야 합니다.<br>
+                        <strong>클라우디 13성 이상을 채용하는 것이 아니라면 [고양이 스킬 증폭] 룬은 필수입니다!</strong>
+                    </p>
+                </div>
+
+                <!-- Buff Rune Explanation -->
+                <div class="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-xl mb-6 border border-indigo-200 dark:border-indigo-700/50">
+                    <h4 class="font-bold text-indigo-700 dark:text-indigo-400 mb-2 flex items-center"><i class="fas fa-bolt mr-2"></i>버프 룬 완벽 이해하기</h4>
+                    <div class="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                        <p><strong class="text-indigo-600 dark:text-indigo-300">[ n% 버프룬 ]</strong>: 해적 or 고양이 타입 스킬 사용 시 최종피해량이 N% 증가 (중첩 가능)</p>
+                        <p class="bg-white/50 dark:bg-black/20 p-2 rounded-lg text-xs">
+                            <strong>예시) 고양이 버프룬 장착 시:</strong><br>
+                            - 고양이 스킬 1개 사용 시: 200% 증가<br>
+                            - 고양이 스킬 4개 사용 시: 800% 증가<br>
+                            즉, 서로 다른 고양이 타입 스킬 3개를 사용하면 <strong>3중첩 효과</strong>가 적용됩니다.
+                        </p>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-6 bg-gray-100 dark:bg-gray-800 p-3 rounded-xl text-center">
+                    <i class="fas fa-info-circle mr-1"></i> 캣히 특성상 상황에 따라 메인이건 서브건 룬의 효율이 증감하니 일부 빼고 고정은 아닙니다.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- PvE -->
+                    <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl">
+                        <h4 class="font-bold text-lg mb-3 text-blue-600 dark:text-blue-400 border-b border-blue-200 dark:border-blue-700 pb-2">🗡️ PvE 기준 티어</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start">
+                                <span class="bg-red-100 text-red-600 px-2 py-0.5 rounded text-xs font-bold mr-2 mt-0.5 whitespace-nowrap">1티어</span>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>마력관련 룬</strong><br><span class="text-xs text-gray-500">(동물마력개선, 전설마력개선, 최대마력증가 등)</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-orange-100 text-orange-600 px-2 py-0.5 rounded text-xs font-bold mr-2 mt-0.5 whitespace-nowrap">2티어</span>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>각종 버프 룬</strong><br><span class="text-xs text-gray-500">(해적, 고양이, 늑대, 음식, 기계)</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-yellow-100 text-yellow-600 px-2 py-0.5 rounded text-xs font-bold mr-2 mt-0.5 whitespace-nowrap">3티어</span>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>동물 강화</strong><br><span class="text-xs text-gray-500">(조건에 따라 1티어급 효율)</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-gray-200 text-gray-600 px-2 py-0.5 rounded text-xs font-bold mr-2 mt-0.5 whitespace-nowrap">4티어</span>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>치명타 룬</strong><br><span class="text-xs text-gray-500">(순수 치명 70% 이상이면 사용 X)</span></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- PvP -->
+                    <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl">
+                        <h4 class="font-bold text-lg mb-3 text-red-600 dark:text-red-400 border-b border-red-200 dark:border-red-700 pb-2">🛡️ PvP 기준 티어</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start">
+                                <span class="bg-red-100 text-red-600 px-2 py-0.5 rounded text-xs font-bold mr-2 mt-0.5 whitespace-nowrap">1티어</span>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>마력관련 룬</strong><br><span class="text-xs text-gray-500">(동물마력개선, 전설마력개선, 최대마력증가 등)</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-orange-100 text-orange-600 px-2 py-0.5 rounded text-xs font-bold mr-2 mt-0.5 whitespace-nowrap">2티어</span>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>회피, 명중 룬</strong></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-yellow-100 text-yellow-600 px-2 py-0.5 rounded text-xs font-bold mr-2 mt-0.5 whitespace-nowrap">3티어</span>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>각종 버프 룬</strong><br><span class="text-xs text-gray-500">(해적, 고양이, 늑대, 음식, 기계)</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-gray-200 text-gray-600 px-2 py-0.5 rounded text-xs font-bold mr-2 mt-0.5 whitespace-nowrap">4티어</span>
+                                <span class="text-gray-700 dark:text-gray-300"><strong>치명타 저항 룬</strong></span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -725,60 +919,7 @@
                 <div class="absolute -right-5 -top-5 w-32 h-32 opacity-20 pointer-events-none">
                     <img src="Clipped_image_20240831_192903.png" onerror="this.style.display='none'" class="w-full h-full object-contain">
                 </div>
-
-                <div class="mb-6">
-                    <label class="block text-sm font-bold text-gray-500 mb-2">어떤 증표를 분배하나요?</label>
-                    <div class="grid grid-cols-5 gap-2">
-                        <button onclick="setDistGroup('pirate')" id="btn-pirate" class="p-2 rounded-xl bg-indigo-100 text-indigo-600 hover:bg-indigo-500 hover:text-white transition font-bold text-xs md:text-sm">🏴‍☠️ 해적</button>
-                        <button onclick="setDistGroup('wolf')" id="btn-wolf" class="p-2 rounded-xl bg-blue-100 text-blue-600 hover:bg-blue-500 hover:text-white transition font-bold text-xs md:text-sm">🐺 늑대</button>
-                        <button onclick="setDistGroup('food')" id="btn-food" class="p-2 rounded-xl bg-red-100 text-red-600 hover:bg-red-500 hover:text-white transition font-bold text-xs md:text-sm">🍖 음식</button>
-                        <button onclick="setDistGroup('cat')" id="btn-cat" class="p-2 rounded-xl bg-yellow-100 text-yellow-600 hover:bg-yellow-500 hover:text-white transition font-bold text-xs md:text-sm">🐱 냥이</button>
-                        <button onclick="setDistGroup('all')" id="btn-all" class="p-2 rounded-xl bg-purple-100 text-purple-600 hover:bg-purple-500 hover:text-white transition font-bold text-xs md:text-sm shadow-md ring-2 ring-transparent ring-offset-2 dark:ring-offset-gray-900">👑 전체</button>
-                    </div>
-                </div>
-
-                <div class="mb-8 bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-200 dark:border-gray-700">
-                    <h4 class="text-xs font-bold text-gray-400 mb-2 uppercase">참여 인원 (<span id="member-count">0</span>명)</h4>
-                    <div id="member-list" class="flex flex-wrap gap-2">
-                        <span class="text-gray-400 text-sm">그룹을 선택해주세요.</span>
-                    </div>
-                </div>
-
-                <div class="flex border-b border-gray-200 dark:border-gray-700 mb-6 overflow-x-auto">
-                    <button onclick="switchTool('roulette')" class="flex-1 pb-3 px-4 font-bold text-gray-400 hover:text-brand-500 border-b-2 border-transparent hover:border-brand-500 transition whitespace-nowrap" id="tab-roulette">🎡 룰렛</button>
-                    <button onclick="switchTool('draw')" class="flex-1 pb-3 px-4 font-bold text-gray-400 hover:text-brand-500 border-b-2 border-transparent hover:border-brand-500 transition whitespace-nowrap" id="tab-draw">📦 제비뽑기</button>
-                    <button onclick="switchTool('ladder')" class="flex-1 pb-3 px-4 font-bold text-gray-400 hover:text-brand-500 border-b-2 border-transparent hover:border-brand-500 transition whitespace-nowrap" id="tab-ladder">🪜 사다리</button>
-                    <button onclick="switchTool('rank')" class="flex-1 pb-3 px-4 font-bold text-gray-400 hover:text-brand-500 border-b-2 border-transparent hover:border-brand-500 transition whitespace-nowrap" id="tab-rank">🏆 순위 정하기</button>
-                </div>
-
-                <div id="tool-roulette" class="tool-content hidden flex flex-col items-center">
-                    <div class="relative mb-6">
-                        <div class="pointer"></div>
-                        <canvas id="roulette-canvas" width="300" height="300"></canvas>
-                    </div>
-                    <button onclick="spinRoulette()" id="spin-btn" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 rounded-xl shadow-lg transition transform active:scale-95">돌리기!</button>
-                    <div id="roulette-result" class="mt-4 text-xl font-bold text-indigo-500 h-8"></div>
-                </div>
-
-                <div id="tool-draw" class="tool-content hidden flex flex-col items-center py-10">
-                    <div id="draw-box" onclick="pickDraw()" class="cursor-pointer w-40 h-40 bg-gradient-to-br from-pink-400 to-rose-500 rounded-3xl shadow-xl flex items-center justify-center text-5xl text-white hover:scale-105 transition-transform">❓</div>
-                    <p class="text-gray-400 text-sm mt-4">상자를 클릭하여 당첨자를 확인하세요!</p>
-                    <div id="draw-result" class="mt-6 text-2xl font-bold text-pink-500 h-10"></div>
-                </div>
-
-                <div id="tool-ladder" class="tool-content hidden flex flex-col items-center">
-                    <div class="w-full mb-4 ladder-scroll-container">
-                        <canvas id="ladder-canvas" height="300"></canvas>
-                    </div>
-                    <button onclick="runLadder()" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl shadow-lg transition transform active:scale-95">사다리 결과 확인</button>
-                    <p class="text-xs text-gray-400 mt-2">* 인원이 많으면 화면을 좌우로 스크롤하세요.</p>
-                </div>
-
-                <div id="tool-rank" class="tool-content hidden">
-                    <button onclick="generateRank()" class="w-full mb-4 bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl shadow-lg transition transform active:scale-95"><i class="fas fa-random mr-2"></i>순위 섞기</button>
-                    <ul id="rank-list" class="space-y-2"></ul>
-                </div>
-
+                <!-- ... content ... -->
             </div>
         </section>
 
@@ -828,7 +969,7 @@
     </main>
 
     <script>
-        // --- 1. DATA CONSTANTS (Declared FIRST to avoid ReferenceError) ---
+        // --- 1. DATA CONSTANTS ---
         const deckData = {
             '1myth': [
                 {
@@ -945,7 +1086,7 @@
                     title: '🍔 음식 덱 (디버프)',
                     members: '보안관잭, 파이로스, 츄리, 핫페퍼, 샌드위치백작, 스타링',
                     skills: '마법방패, 파티타임, 매콤한저주, 토핑폭격, 불사조소환, 사탕굴러가요',
-                    runes: '불사조 소환, 토핑 폭격, 매콤한 저주, 파티 타임, 블랙홀감전',
+                    runes: '불사조 소환, 토핑 폭격, 매콤한 저주, 파티 타임, 블랙홀강화',
                     desc: '디버프가 강해 KO 안나면 다 이김.',
                     score: { pve: 5, pvp: 2, cost: 2 },
                     type: 'food'
@@ -1058,20 +1199,6 @@
             {lv:82, r:"픽업 3000, 룬뽑 3000", s:true}
         ];
 
-        const guildMembers = {
-            pirate: ["김동순", "노들", "장국/613", "👑콘스", "고기쟁이"],
-            wolf: ["👑벼리", "👑하구바", "일민", "캣핑", "동삐", "포저", "나는도비"],
-            food: ["마자유", "창식"],
-            cat: ["👑라익늑냥", "유나", "👑613 / 베리발"],
-            all: []
-        };
-        // Populate All
-        guildMembers.all = [...guildMembers.pirate, ...guildMembers.wolf, ...guildMembers.food, ...guildMembers.cat];
-        
-        let currentMembers = [];
-        let currentTool = 'roulette';
-        let isSpinning = false;
-
         // --- 2. PASSWORD LOGIC ---
         function checkPassword() {
             const input = document.getElementById('password-input').value;
@@ -1108,6 +1235,18 @@
                 window.scrollTo(0,0);
             }
             updateNav(id);
+        }
+
+        function scrollToId(elementId) {
+             const element = document.getElementById(elementId);
+             if (element) {
+                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                 // Add a highlight effect
+                 element.classList.add('ring-4', 'ring-brand-500', 'transition-all', 'duration-500');
+                 setTimeout(() => {
+                     element.classList.remove('ring-4', 'ring-brand-500');
+                 }, 2000);
+             }
         }
 
         function updateNav(activeId) {
@@ -1173,226 +1312,8 @@
             display.innerText = score.toLocaleString() + " 점";
         }
 
-        // --- 5. DISTRIBUTION TOOLS ---
-        function setDistGroup(group) {
-            currentMembers = guildMembers[group];
-            
-            // Highlight Button
-            ['pirate','wolf','food','cat','all'].forEach(g => {
-                const btn = document.getElementById('btn-'+g);
-                if(g === group) {
-                    btn.classList.add('ring-2', 'ring-brand-500', 'scale-105');
-                } else {
-                    btn.classList.remove('ring-2', 'ring-brand-500', 'scale-105');
-                }
-            });
-
-            // Update List
-            const listEl = document.getElementById('member-list');
-            document.getElementById('member-count').innerText = currentMembers.length;
-            listEl.innerHTML = currentMembers.map(m => 
-                `<span class="bg-white dark:bg-gray-700 px-2 py-1 rounded text-sm shadow-sm border border-gray-100 dark:border-gray-600">${m}</span>`
-            ).join('');
-
-            // Reset Tools
-            drawRouletteCanvas();
-            document.getElementById('draw-result').innerText = "";
-            document.getElementById('draw-box').innerHTML = "❓";
-            document.getElementById('rank-list').innerHTML = "";
-            if(currentTool === 'ladder') initLadder();
-        }
-
-        function switchTool(tool) {
-            currentTool = tool;
-            ['roulette','draw','rank','ladder'].forEach(t => {
-                document.getElementById('tool-'+t).classList.add('hidden');
-                document.getElementById('tab-'+t).classList.remove('text-brand-500', 'border-brand-500');
-                document.getElementById('tab-'+t).classList.add('text-gray-400');
-            });
-            document.getElementById('tool-'+tool).classList.remove('hidden');
-            document.getElementById('tab-'+tool).classList.add('text-brand-500', 'border-brand-500');
-            document.getElementById('tab-'+tool).classList.remove('text-gray-400');
-
-            if(tool === 'roulette') setTimeout(drawRouletteCanvas, 100);
-            if(tool === 'ladder') setTimeout(initLadder, 100);
-        }
-
-        function drawRouletteCanvas() {
-            const canvas = document.getElementById('roulette-canvas');
-            if(!canvas) return;
-            const ctx = canvas.getContext('2d');
-            const size = 300;
-            const center = size/2;
-            const radius = size/2 - 10;
-            const list = currentMembers.length > 0 ? currentMembers : ["선택필요"];
-            const step = (2 * Math.PI) / list.length;
-            const colors = ['#fca5a5', '#fdba74', '#fcd34d', '#86efac', '#93c5fd', '#c4b5fd', '#f9a8d4'];
-
-            ctx.clearRect(0,0,size,size);
-            
-            list.forEach((member, i) => {
-                ctx.beginPath();
-                ctx.moveTo(center, center);
-                ctx.arc(center, center, radius, i*step, (i+1)*step);
-                ctx.fillStyle = colors[i % colors.length];
-                ctx.fill();
-                ctx.stroke();
-
-                ctx.save();
-                ctx.translate(center, center);
-                ctx.rotate(i*step + step/2);
-                ctx.textAlign = "right";
-                ctx.fillStyle = "#333";
-                ctx.font = "bold 14px sans-serif";
-                ctx.fillText(member, radius - 20, 5);
-                ctx.restore();
-            });
-        }
-
-        function spinRoulette() {
-            if(isSpinning || currentMembers.length === 0) return;
-            isSpinning = true;
-            const canvas = document.getElementById('roulette-canvas');
-            const resultDiv = document.getElementById('roulette-result');
-            
-            resultDiv.innerText = "돌아가는 중...";
-            
-            const segmentAngle = 360 / currentMembers.length;
-            const winnerIndex = Math.floor(Math.random() * currentMembers.length);
-            const spin = 360 * 5 + (360 - (winnerIndex * segmentAngle + segmentAngle/2)) - 90; 
-            
-            canvas.style.transform = `rotate(${spin}deg)`;
-
-            setTimeout(() => {
-                isSpinning = false;
-                resultDiv.innerHTML = `🎉 당첨: <span class="text-2xl">${currentMembers[winnerIndex]}</span>`;
-                canvas.style.transition = 'none';
-                canvas.style.transform = `rotate(${spin % 360}deg)`;
-                setTimeout(() => canvas.style.transition = 'transform 4s cubic-bezier(0.25, 0.1, 0.25, 1)', 50);
-            }, 4000);
-        }
-
-        function pickDraw() {
-            if(currentMembers.length === 0) return;
-            const box = document.getElementById('draw-box');
-            const res = document.getElementById('draw-result');
-            
-            box.classList.add('animate-bounce-slight');
-            res.innerText = "두구두구...";
-            
-            setTimeout(() => {
-                box.classList.remove('animate-bounce-slight');
-                const winner = currentMembers[Math.floor(Math.random() * currentMembers.length)];
-                box.innerHTML = "🎁";
-                res.innerHTML = `🎊 ${winner} 🎊`;
-            }, 1500);
-        }
-
-        function initLadder() {
-            const canvas = document.getElementById('ladder-canvas');
-            const container = document.querySelector('.ladder-scroll-container');
-            if(!canvas) return;
-            
-            const list = currentMembers.length > 0 ? currentMembers : ["참가자 없음"];
-            const gap = 60;
-            const width = Math.max(container.clientWidth, list.length * gap + 40);
-            canvas.width = width;
-            
-            drawLadder(canvas, list);
-        }
-
-        function drawLadder(canvas, list) {
-            const ctx = canvas.getContext('2d');
-            const h = canvas.height;
-            const gap = 60;
-            const startX = 30;
-            
-            ctx.clearRect(0, 0, canvas.width, h);
-            ctx.strokeStyle = '#9ca3af';
-            ctx.lineWidth = 2;
-            ctx.font = '12px sans-serif';
-            ctx.textAlign = 'center';
-            ctx.fillStyle = '#374151';
-
-            list.forEach((m, i) => {
-                const x = startX + i * gap;
-                ctx.beginPath();
-                ctx.moveTo(x, 30);
-                ctx.lineTo(x, h - 30);
-                ctx.stroke();
-                ctx.fillText(m, x, 20);
-                ctx.fillText(i+1, x, h - 10);
-            });
-
-            if(list.length > 1) {
-                for(let i=0; i<list.length-1; i++) {
-                    const x = startX + i * gap;
-                    for(let j=0; j<4; j++) {
-                        const y = 50 + Math.random() * (h - 100);
-                        ctx.beginPath();
-                        ctx.moveTo(x, y);
-                        ctx.lineTo(x + gap, y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        function runLadder() {
-            if(currentMembers.length === 0) return;
-            const canvas = document.getElementById('ladder-canvas');
-            const ctx = canvas.getContext('2d');
-            const h = canvas.height;
-            const gap = 60;
-            const startX = 30;
-            
-            drawLadder(canvas, currentMembers);
-            
-            const colors = ['#ef4444', '#f97316', '#f59e0b', '#84cc16', '#3b82f6', '#8b5cf6', '#ec4899'];
-            
-            currentMembers.forEach((m, i) => {
-                const x = startX + i * gap;
-                ctx.strokeStyle = colors[i % colors.length];
-                ctx.lineWidth = 3;
-                ctx.beginPath();
-                ctx.moveTo(x, 30);
-                ctx.lineTo(x, h - 30); 
-                ctx.stroke();
-            });
-            
-            const results = [...currentMembers].map((_, i) => i + 1); 
-            for (let i = results.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [results[i], results[j]] = [results[j], results[i]];
-            }
-            
-            ctx.fillStyle = '#000';
-            ctx.font = 'bold 14px sans-serif';
-            currentMembers.forEach((_, i) => {
-                const x = startX + i * gap;
-                ctx.clearRect(x - 20, h - 25, 40, 25);
-                ctx.fillText(results[i] + '등', x, h - 10);
-            });
-        }
-
-        function generateRank() {
-            if(currentMembers.length === 0) return;
-            const list = [...currentMembers];
-            for (let i = list.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [list[i], list[j]] = [list[j], list[i]];
-            }
-            
-            const ul = document.getElementById('rank-list');
-            ul.innerHTML = list.map((m, i) => {
-                let medal = i===0 ? '🥇' : i===1 ? '🥈' : i===2 ? '🥉' : `${i+1}위`;
-                let bg = i===0 ? 'bg-yellow-100 text-yellow-700' : 'bg-white dark:bg-gray-700';
-                return `<li class="flex items-center justify-between px-4 py-3 rounded-xl shadow-sm ${bg} border border-gray-100 dark:border-gray-600">
-                    <span class="font-bold w-12">${medal}</span>
-                    <span class="flex-1 text-center font-medium">${m}</span>
-                </li>`;
-            }).join('');
-        }
+        // --- 5. DISTRIBUTION TOOLS (REMOVED) ---
+        // As requested, the distribution tool logic is removed.
 
         // --- 6. RENDER FUNCTIONS (FIXED) ---
         function renderDecks() {
@@ -1484,7 +1405,6 @@
         }
 
         // Init Calls
-        setDistGroup('pirate'); 
         renderDecks(); 
         
         // Render Nocturne Table
