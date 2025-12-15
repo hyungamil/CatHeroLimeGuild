@@ -357,9 +357,6 @@
             <button onclick="openSection('calculator')" class="sidebar-btn w-full text-left p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center gap-3 text-gray-600 dark:text-gray-300" data-target="calculator">
                 <i class="fas fa-calculator w-6 text-center"></i> 격추 계산기
             </button>
-            <button onclick="openSection('distribution')" class="sidebar-btn w-full text-left p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center gap-3 text-gray-600 dark:text-gray-300" data-target="distribution">
-                <i class="fas fa-gift w-6 text-center text-pink-500"></i> 분배 도구
-            </button>
             <button onclick="openSection('store')" class="sidebar-btn w-full text-left p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center gap-3 text-gray-600 dark:text-gray-300" data-target="store">
                 <i class="fas fa-shopping-bag w-6 text-center"></i> 문의 & 스토어
             </button>
@@ -482,18 +479,6 @@
                         <p class="text-xs text-gray-500">점수 자동 계산</p>
                     </div>
                 </button>
-
-                <!-- 7. 분배 도구 -->
-                <button onclick="openSection('distribution')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-pink-500 group relative overflow-hidden">
-                    <div class="w-16 h-16 rounded-xl bg-pink-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
-                        <img src="Clipped_image_20240831_192903.png" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
-                        <i class="fas fa-gift text-3xl text-pink-400 z-0" style="display:none"></i>
-                    </div>
-                    <div class="text-center">
-                        <h2 class="font-display text-lg mb-1">분배 도구</h2>
-                        <p class="text-sm text-gray-500">제비뽑기, 룰렛</p>
-                    </div>
-                </button>
                 
                 <!-- 8. 문의 & 스토어 -->
                 <button onclick="openSection('store')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-gray-500 group relative overflow-hidden">
@@ -535,6 +520,10 @@
                 </button>
                 <button onclick="scrollToId('medal')" class="snap-start flex-shrink-0 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-yellow-200 transition">
                     <i class="fas fa-medal mr-1"></i> 메달
+                </button>
+                <!-- New Trophy Tab -->
+                <button onclick="scrollToId('trophy')" class="snap-start flex-shrink-0 bg-yellow-400 text-yellow-900 px-4 py-2 rounded-xl font-bold text-sm hover:bg-yellow-500 transition">
+                    <i class="fas fa-trophy mr-1"></i> 트로피
                 </button>
             </div>
 
@@ -635,6 +624,48 @@
                             <span class="block mb-1">PvP 유저 👉 힘 + 수호</span>
                             <span class="block">격추 유저 👉 투지</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Hidden Trophies (NEW) -->
+                <div id="trophy" class="glass-card p-6 rounded-3xl border-l-4 border-yellow-400 scroll-mt-24">
+                    <h3 class="font-bold text-xl mb-4 text-yellow-500 flex items-center"><i class="fas fa-trophy mr-2"></i>히든 트로피</h3>
+                    
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-xl mb-4 border border-yellow-200 dark:border-yellow-700">
+                         <p class="text-xs text-yellow-800 dark:text-yellow-200 font-bold text-center">
+                             ⚠️ 주의: 내용이 정확하지 않을 수 있습니다.
+                         </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm text-gray-700 dark:text-gray-300">
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>어항 수집가:</strong> 어항 충전 키트 누적 10만개</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>진짜 VIP:</strong> VIP 블랙 이상</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>행운아:</strong> 전설 룬 획득</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>베스트 프렌드:</strong> 친구 20명</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>대포 수집가:</strong> 대포 24종</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>스킬 수집가:</strong> 스킬 33종</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>동료 수집가:</strong> 동료 46종</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>탈것 수집가:</strong> 탈것 15종</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>마을 수비대:</strong> 마을 방어 20회</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>약탈 왕:</strong> 마을 약탈 50회</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>심술궂은 고양씨:</strong> 마을 못 30회</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>친절한 고양씨:</strong> 마을 도움 100회</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>파괴 왕:</strong> 장비 분해 20회</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>마이다스 손:</strong> 장비 합성 30회 실패</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>금 손:</strong> 장비 합성 10회 성공(등급업)</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>레전더리:</strong> 전설 장비 획득</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>차원의 지배자:</strong> 차원의 공간 100%</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>다이아 갑부:</strong> 누적 1,000만 다이아</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>이등병:</strong> 모든 골드 훈련 완료</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>리뷰어:</strong> 별점 주기 30회 이상</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>이장님:</strong> 고양이 회관 30레벨</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>보물찾기 1/2:</strong> 히든 트로피 10/15개</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>Top 100~1:</strong> 스테이지 랭킹 달성</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>미니게임 고수:</strong> 퍼펙트 클리어 100회</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>초보 연금술사:</strong> 연금술 10회 시도</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>기분 나쁜 연금술사:</strong> 연금술 10회 실패</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>기분 좋은 연금술사:</strong> 연금술 10회 성공</div>
+                        <div class="p-2 bg-gray-50 dark:bg-gray-800 rounded-lg"><strong>정답이다, 연금술사:</strong> 연금술 50회 성공</div>
                     </div>
                 </div>
 
@@ -864,7 +895,72 @@
                 </div>
             </div>
 
-            <!-- NEW: Auxiliary Runes Guide -->
+            <!-- 다이아몬드, 대포, 연구 순위 추가 (NEW) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- 다이아몬드 사용처 -->
+                <div class="glass-card p-6 rounded-3xl border-l-4 border-cyan-500">
+                    <h3 class="font-bold text-xl mb-4 text-cyan-600 dark:text-cyan-400 flex items-center"><i class="fas fa-gem mr-2"></i>다이아몬드 사용처</h3>
+                    <div class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        <div class="bg-cyan-50 dark:bg-cyan-900/20 p-3 rounded-xl text-xs md:text-sm">
+                            <strong class="block mb-1 text-cyan-700 dark:text-cyan-300">💎 종류별 획득/사용</strong>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><strong>블랙:</strong> 거래소/격전지 획득 → 유저 거래 (VIP 1↑)</li>
+                                <li><strong>레드:</strong> 차원/리그 획득 → 트로피/탈것 뽑기 (1회 300)</li>
+                                <li><strong>블루:</strong> 일퀘/출석 획득 → 기본 재화</li>
+                            </ul>
+                        </div>
+                        <div class="p-2 border-t border-gray-200 dark:border-gray-700">
+                            <strong class="block text-blue-600 dark:text-blue-400">A. 구름상점 외형 구매 (필수)</strong>
+                            <span class="text-xs">보유 효과라 다다익선! 다이아 외형은 전부 구매하세요.</span>
+                        </div>
+                        <div class="p-2 border-t border-gray-200 dark:border-gray-700">
+                            <strong class="block text-blue-600 dark:text-blue-400">B. 동료 뽑기 6레벨 달성</strong>
+                            <span class="text-xs">6렙부터 전설 픽업 활성화. 다이아/티켓 모아서 천장(1만회=300만 다이아) 치는 것 추천.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 대포 & 연구 순위 -->
+                <div class="space-y-6">
+                    <!-- 대포 -->
+                    <div class="glass-card p-6 rounded-3xl border-l-4 border-slate-500">
+                        <h3 class="font-bold text-xl mb-2 text-slate-600 dark:text-slate-400 flex items-center"><i class="fas fa-bomb mr-2"></i>대포 효과</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">영웅 3줄작(치확) 아니면 <strong>무조건 생선제작레벨</strong> 추천!</p>
+                        <p class="text-xs text-gray-500">* 엔드 컨텐츠라 시간/돈 많이 듭니다. 영웅 대포까지 3줄작 추천.</p>
+                    </div>
+
+                    <!-- 연구 순위 -->
+                    <div class="glass-card p-6 rounded-3xl border-l-4 border-yellow-500">
+                        <h3 class="font-bold text-xl mb-4 text-yellow-600 dark:text-yellow-400 flex items-center"><i class="fas fa-flask mr-2"></i>연구 순위 정리</h3>
+                        <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                            <div>
+                                <strong class="block text-indigo-600 dark:text-indigo-400 mb-1">🧪 일반 연구</strong>
+                                <ol class="list-decimal list-inside text-xs md:text-sm space-y-0.5">
+                                    <li>마력 (동료 장착 필수재화)</li>
+                                    <li>연구 시간 감소</li>
+                                    <li>생선 제작 레벨 (매우 중요)</li>
+                                    <li>룬 효과 증폭 (스펙업)</li>
+                                    <li>방치 보상 증가 (무과금 2순위)</li>
+                                </ol>
+                            </div>
+                            <div class="pt-2 border-t border-gray-200 dark:border-gray-700">
+                                <strong class="block text-yellow-600 dark:text-yellow-400 mb-1">🏆 황금 연구 (PvP 추천)</strong>
+                                <ol class="list-decimal list-inside text-xs md:text-sm space-y-0.5">
+                                    <li>PvP 회피 / 명중 (강하면 명중, 약하면 회피)</li>
+                                    <li>격전지 추가 점수 (1%도 큼)</li>
+                                    <li>고급 연구 슬롯 증가</li>
+                                </ol>
+                                <p class="text-xs text-gray-400 mt-1">* 황금 코인은 서버 60일 후 소모 이벤트에서 획득</p>
+                            </div>
+                            <div class="pt-2 border-t border-gray-200 dark:border-gray-700">
+                                <strong class="text-purple-600 dark:text-purple-400">🔮 고급 연구:</strong> 본인 덱 타입에 맞게!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auxiliary Runes Guide -->
             <div class="glass-card p-6 rounded-3xl mt-6 border-t-4 border-purple-500">
                 <h3 class="font-bold text-xl mb-4 text-purple-600 dark:text-purple-400 flex items-center">
                     <i class="fas fa-gem mr-2"></i> 보조 룬 상세 가이드
@@ -1003,21 +1099,6 @@
             </div>
         </section>
 
-        <!-- 6. 분배 도구 -->
-        <section id="distribution" class="hidden page-enter">
-            <button onclick="goHome()" class="mb-4 flex items-center gap-2 text-gray-500 hover:text-brand-500 transition-colors">
-                <i class="fas fa-arrow-left"></i> <span class="font-bold text-sm">뒤로가기</span>
-            </button>
-            <h2 class="text-3xl font-display mb-6 text-gray-800 dark:text-white">아이템 분배 도구</h2>
-            
-            <div class="max-w-3xl mx-auto glass-card p-6 rounded-3xl border border-pink-200 dark:border-gray-700 relative overflow-hidden">
-                <div class="absolute -right-5 -top-5 w-32 h-32 opacity-20 pointer-events-none">
-                    <img src="Clipped_image_20240831_192903.png" onerror="this.style.display='none'" class="w-full h-full object-contain">
-                </div>
-                <!-- ... content ... -->
-            </div>
-        </section>
-
         <!-- 7. 문의 & 스토어 -->
         <section id="store" class="hidden page-enter">
             <button onclick="goHome()" class="mb-4 flex items-center gap-2 text-gray-500 hover:text-brand-500 transition-colors">
@@ -1064,7 +1145,7 @@
     </main>
 
     <script>
-        // --- 1. DATA CONSTANTS ---
+        // --- 1. DATA CONSTANTS (Declared FIRST to avoid ReferenceError) ---
         const deckData = {
             '1myth': [
                 {
@@ -1181,7 +1262,7 @@
                     title: '🍔 음식 덱 (디버프)',
                     members: '보안관잭, 파이로스, 츄리, 핫페퍼, 샌드위치백작, 스타링',
                     skills: '마법방패, 파티타임, 매콤한저주, 토핑폭격, 불사조소환, 사탕굴러가요',
-                    runes: '불사조 소환, 토핑 폭격, 매콤한 저주, 파티 타임, 블랙홀감전',
+                    runes: '불사조 소환, 토핑 폭격, 매콤한 저주, 파티 타임, 블랙홀강화',
                     desc: '디버프가 강해 KO 안나면 다 이김.',
                     score: { pve: 5, pvp: 2, cost: 2 },
                     type: 'food'
