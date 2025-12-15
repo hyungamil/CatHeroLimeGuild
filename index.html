@@ -183,11 +183,55 @@
             background-color: rgba(156, 163, 175, 0.5);
             border-radius: 3px;
         }
+
+        /* Payment Popup Modal */
+        #payment-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 9998; /* Just below login overlay */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        #payment-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .payment-content {
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #payment-modal.active .payment-content {
+            transform: scale(1);
+        }
+
+        /* Floating Button */
+        .floating-btn {
+            position: fixed;
+            bottom: 80px; /* Mobile safe area */
+            right: 20px;
+            z-index: 50;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        @media (min-width: 768px) {
+            .floating-btn {
+                bottom: 30px;
+                right: 30px;
+            }
+        }
     </style>
 </head>
 <body class="bg-pattern min-h-screen text-gray-800 transition-colors duration-300 dark:text-gray-100 font-sans overflow-x-hidden readable-text">
 
-    <!-- PASSWORD LOGIN OVERLAY -->
+    <!-- PASSWORD LOGIN OVERLAY (Option 1) -->
     <div id="login-overlay">
         <div class="login-card relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-1 bg-brand-500"></div>
@@ -215,6 +259,64 @@
             <p id="login-msg" class="text-brand-400 text-xs mt-3 h-4 font-bold"></p>
         </div>
     </div>
+
+    <!-- PAYMENT MODAL -->
+    <div id="payment-modal" onclick="if(event.target === this) closePaymentModal()">
+        <div class="payment-content bg-white dark:bg-gray-800 w-11/12 max-w-md rounded-3xl p-6 shadow-2xl border border-gray-200 dark:border-gray-700 relative overflow-hidden">
+            <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-14 h-14 bg-amber-100 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl shadow-inner">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <h3 class="text-2xl font-bold font-display text-gray-800 dark:text-white">과금 효율 추천</h3>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">지갑을 지키는 가장 현명한 방법!</p>
+            </div>
+            <div class="space-y-3 max-h-[60vh] overflow-y-auto pr-1 custom-scrollbar">
+                <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-2xl border border-red-100 dark:border-red-800/50">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-md">1순위</span>
+                        <h4 class="font-bold text-red-700 dark:text-red-300">광고 제거</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">입장 비다 버프, 광고 쥐 등 쾌적한 게임을 위한 필수 요소입니다.</p>
+                </div>
+                <div class="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-2xl border border-orange-100 dark:border-orange-800/50">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded-md">2순위</span>
+                        <h4 class="font-bold text-orange-700 dark:text-orange-300">VIP 등급</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">초반엔 미미하지만 높아질수록 엄청난 효율! (풀매수 시 80만원↑, 돈값은 확실히 합니다)</p>
+                </div>
+                <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-2xl border border-yellow-100 dark:border-yellow-800/50">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-yellow-500 text-white text-xs font-bold px-2 py-0.5 rounded-md">3순위</span>
+                        <h4 class="font-bold text-yellow-700 dark:text-yellow-300">각종 패스권</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">격전지, 고양이 마을, 도전의 탑, 미니게임 패스 등 가성비가 매우 좋습니다.</p>
+                </div>
+                <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-2xl border border-blue-100 dark:border-blue-800/50">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-blue-500 text-white text-xs font-bold px-2 py-0.5 rounded-md">4순위</span>
+                        <h4 class="font-bold text-blue-700 dark:text-blue-300">이벤트 패키지 / 타임딜</h4>
+                    </div>
+                    <ul class="text-sm text-gray-600 dark:text-gray-300 list-disc list-inside text-xs leading-relaxed">
+                        <li><strong>룬 소환:</strong> 99,000원 = 5,000장</li>
+                        <li><strong>픽업 소환:</strong> 99,000원 = 4,000장</li>
+                        <li><strong>신화 소환:</strong> 약 60만원 = 10,000장</li>
+                    </ul>
+                </div>
+            </div>
+            <button onclick="closePaymentModal()" class="w-full mt-6 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-bold py-3 rounded-xl transition">
+                확인했습니다
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating Button for Payment Info -->
+    <button onclick="openPaymentModal()" class="floating-btn w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center text-white text-xl md:text-2xl shadow-lg border-2 border-white/30 hover:scale-110 transition-transform animate-bounce-slight" title="과금 추천">
+        <i class="fas fa-gem"></i>
+    </button>
 
     <!-- Toast Notification -->
     <div id="toast">이메일 주소가 복사되었습니다!</div>
@@ -254,6 +356,9 @@
             <div class="my-2 border-t border-gray-200 dark:border-gray-700"></div>
             <button onclick="openSection('calculator')" class="sidebar-btn w-full text-left p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center gap-3 text-gray-600 dark:text-gray-300" data-target="calculator">
                 <i class="fas fa-calculator w-6 text-center"></i> 격추 계산기
+            </button>
+            <button onclick="openSection('distribution')" class="sidebar-btn w-full text-left p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center gap-3 text-gray-600 dark:text-gray-300" data-target="distribution">
+                <i class="fas fa-gift w-6 text-center text-pink-500"></i> 분배 도구
             </button>
             <button onclick="openSection('store')" class="sidebar-btn w-full text-left p-3 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center gap-3 text-gray-600 dark:text-gray-300" data-target="store">
                 <i class="fas fa-shopping-bag w-6 text-center"></i> 문의 & 스토어
@@ -305,9 +410,9 @@
                 </div>
             </div>
 
-            <!-- 대시보드 그리드 -->
+            <!-- 대시보드 그리드 (정리된 폴더 방식) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 mt-6">
-                <!-- 기존 1. 일정 -->
+                <!-- 1. 일정 -->
                 <button onclick="openSection('schedule')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-blue-500 group relative overflow-hidden">
                     <div class="w-16 h-16 rounded-xl bg-blue-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
                         <img src="Clipped_image_20240831_190611.png" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
@@ -319,7 +424,7 @@
                     </div>
                 </button>
 
-                <!-- 기존 2. 성장 -->
+                <!-- 2. 성장 -->
                 <button onclick="openSection('growth')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-yellow-500 group relative overflow-hidden">
                     <div class="w-16 h-16 rounded-xl bg-yellow-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
                         <img src="Clipped_image_20240831_163136.jpg" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
@@ -331,62 +436,18 @@
                     </div>
                 </button>
                 
-                <!-- NEW 1. 고양이 마을 -->
-                <button onclick="openSection('systems'); scrollToId('village')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-emerald-500 group relative overflow-hidden">
-                    <div class="w-16 h-16 rounded-xl bg-emerald-100/50 flex items-center justify-center shadow-inner text-emerald-500">
-                        <i class="fas fa-home text-3xl"></i>
+                <!-- 3. 시스템 공략 (폴더) -->
+                <button onclick="openSection('systems')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-slate-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-slate-100/50 flex items-center justify-center shadow-inner text-slate-500">
+                        <i class="fas fa-folder-open text-3xl"></i>
                     </div>
                     <div class="text-center">
-                        <h2 class="font-display text-lg mb-1">고양이 마을</h2>
-                        <p class="text-xs text-gray-500">운석, 동상</p>
+                        <h2 class="font-display text-lg mb-1">시스템 공략 모음</h2>
+                        <p class="text-xs text-gray-500">마을, 도탑, 메달 등</p>
                     </div>
                 </button>
 
-                <!-- NEW 2. 차원의 공간 -->
-                <button onclick="openSection('systems'); scrollToId('dimension')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-purple-500 group relative overflow-hidden">
-                    <div class="w-16 h-16 rounded-xl bg-purple-100/50 flex items-center justify-center shadow-inner text-purple-500">
-                        <i class="fas fa-cube text-3xl"></i>
-                    </div>
-                    <div class="text-center">
-                        <h2 class="font-display text-lg mb-1">차원의 공간</h2>
-                        <p class="text-xs text-gray-500">장비 효과</p>
-                    </div>
-                </button>
-                
-                <!-- NEW 3. 도전의 탑 -->
-                <button onclick="openSection('systems'); scrollToId('tower')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-orange-500 group relative overflow-hidden">
-                    <div class="w-16 h-16 rounded-xl bg-orange-100/50 flex items-center justify-center shadow-inner text-orange-500">
-                        <i class="fas fa-dungeon text-3xl"></i>
-                    </div>
-                    <div class="text-center">
-                        <h2 class="font-display text-lg mb-1">도전의 탑</h2>
-                        <p class="text-xs text-gray-500">옵션 티어</p>
-                    </div>
-                </button>
-
-                <!-- NEW 4. 숨겨진 방 -->
-                <button onclick="openSection('systems'); scrollToId('hidden')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-gray-500 group relative overflow-hidden">
-                    <div class="w-16 h-16 rounded-xl bg-gray-200/50 flex items-center justify-center shadow-inner text-gray-600">
-                        <i class="fas fa-door-open text-3xl"></i>
-                    </div>
-                    <div class="text-center">
-                        <h2 class="font-display text-lg mb-1">숨겨진 방</h2>
-                        <p class="text-xs text-gray-500">방울 옵션</p>
-                    </div>
-                </button>
-
-                <!-- NEW 5. 메달 강화 -->
-                <button onclick="openSection('systems'); scrollToId('medal')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-yellow-600 group relative overflow-hidden">
-                    <div class="w-16 h-16 rounded-xl bg-yellow-100/50 flex items-center justify-center shadow-inner text-yellow-600">
-                        <i class="fas fa-medal text-3xl"></i>
-                    </div>
-                    <div class="text-center">
-                        <h2 class="font-display text-lg mb-1">메달 강화</h2>
-                        <p class="text-xs text-gray-500">PvP/PvE</p>
-                    </div>
-                </button>
-
-                <!-- 기존 3. 상세 공략 -->
+                <!-- 4. 상세 공략 -->
                 <button onclick="openSection('guide')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-red-500 group relative overflow-hidden">
                     <div class="w-16 h-16 rounded-xl bg-red-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
                         <img src="Clipped_image_20240831_192408.png" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
@@ -398,7 +459,7 @@
                     </div>
                 </button>
 
-                <!-- 기존 4. 덱 도감 -->
+                <!-- 5. 덱 도감 -->
                 <button onclick="openSection('deck')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-green-500 group relative overflow-hidden">
                     <div class="w-16 h-16 rounded-xl bg-green-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
                         <img src="Clipped_image_20240831_153500.jpg" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
@@ -410,7 +471,7 @@
                     </div>
                 </button>
 
-                <!-- 기존 5. 격추 계산기 -->
+                <!-- 6. 격추 계산기 -->
                 <button onclick="openSection('calculator')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-indigo-500 group relative overflow-hidden">
                     <div class="w-16 h-16 rounded-xl bg-indigo-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
                         <img src="Clipped_image_20240831_192015.png" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
@@ -421,8 +482,20 @@
                         <p class="text-xs text-gray-500">점수 자동 계산</p>
                     </div>
                 </button>
+
+                <!-- 7. 분배 도구 -->
+                <button onclick="openSection('distribution')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-pink-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 rounded-xl bg-pink-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
+                        <img src="Clipped_image_20240831_192903.png" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
+                        <i class="fas fa-gift text-3xl text-pink-400 z-0" style="display:none"></i>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="font-display text-lg mb-1">분배 도구</h2>
+                        <p class="text-sm text-gray-500">제비뽑기, 룰렛</p>
+                    </div>
+                </button>
                 
-                <!-- 기존 7. 문의 & 스토어 -->
+                <!-- 8. 문의 & 스토어 -->
                 <button onclick="openSection('store')" class="glass-card p-5 rounded-3xl hover:scale-[1.02] transition-all text-left flex flex-col items-center gap-3 border-t-4 border-gray-500 group relative overflow-hidden">
                     <div class="w-16 h-16 rounded-xl bg-gray-100/50 flex items-center justify-center overflow-hidden shadow-inner relative">
                         <img src="Clipped_image_20240831_153256.jpg" onerror="this.style.display='none'" class="w-full h-full object-contain char-img absolute inset-0">
@@ -436,17 +509,39 @@
             </div>
         </section>
 
-        <!-- NEW: 시스템 공략 (Merged Section) -->
+        <!-- NEW: 시스템 공략 (Merged Section with Folder Navigation) -->
         <section id="systems" class="hidden page-enter">
-            <button onclick="goHome()" class="mb-4 flex items-center gap-2 text-gray-500 hover:text-brand-500 transition-colors">
-                <i class="fas fa-arrow-left"></i> <span class="font-bold text-sm">뒤로가기</span>
-            </button>
-            <h2 class="text-3xl font-display mb-6 md:mb-8 text-gray-800 dark:text-white">시스템 가이드</h2>
+            <div class="flex items-center justify-between mb-6">
+                <button onclick="goHome()" class="flex items-center gap-2 text-gray-500 hover:text-brand-500 transition-colors">
+                    <i class="fas fa-arrow-left"></i> <span class="font-bold text-sm">뒤로가기</span>
+                </button>
+                <h2 class="text-2xl font-display text-gray-800 dark:text-white">시스템 가이드</h2>
+                <div class="w-10"></div> <!-- Spacer -->
+            </div>
             
+            <!-- Folder Tabs (Quick Navigation) -->
+            <div class="flex gap-2 overflow-x-auto pb-4 mb-4 scrollbar-hide snap-x">
+                <button onclick="scrollToId('village')" class="snap-start flex-shrink-0 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-emerald-200 transition">
+                    <i class="fas fa-home mr-1"></i> 마을
+                </button>
+                <button onclick="scrollToId('dimension')" class="snap-start flex-shrink-0 bg-purple-100 text-purple-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-purple-200 transition">
+                    <i class="fas fa-cube mr-1"></i> 차원
+                </button>
+                <button onclick="scrollToId('tower')" class="snap-start flex-shrink-0 bg-orange-100 text-orange-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-orange-200 transition">
+                    <i class="fas fa-dungeon mr-1"></i> 도탑
+                </button>
+                <button onclick="scrollToId('hidden')" class="snap-start flex-shrink-0 bg-gray-200 text-gray-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-gray-300 transition">
+                    <i class="fas fa-door-open mr-1"></i> 방울
+                </button>
+                <button onclick="scrollToId('medal')" class="snap-start flex-shrink-0 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-yellow-200 transition">
+                    <i class="fas fa-medal mr-1"></i> 메달
+                </button>
+            </div>
+
             <div class="space-y-8">
                 
                 <!-- 고양이 마을 -->
-                <div id="village" class="glass-card p-6 rounded-3xl border-l-4 border-emerald-500">
+                <div id="village" class="glass-card p-6 rounded-3xl border-l-4 border-emerald-500 scroll-mt-24">
                     <h3 class="font-bold text-xl mb-4 text-emerald-600 flex items-center"><i class="fas fa-home mr-2"></i>고양이 마을</h3>
                     <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
                         <p>고양이 상자를 해금하면 보석과 망치를 획득합니다. 망치로 회관과 동상을 업그레이드하세요.</p>
@@ -465,7 +560,7 @@
                 </div>
 
                 <!-- 차원의 공간 -->
-                <div id="dimension" class="glass-card p-6 rounded-3xl border-l-4 border-purple-500">
+                <div id="dimension" class="glass-card p-6 rounded-3xl border-l-4 border-purple-500 scroll-mt-24">
                     <h3 class="font-bold text-xl mb-4 text-purple-600 flex items-center"><i class="fas fa-cube mr-2"></i>차원의 공간</h3>
                     <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
                         <p>격전지 장비로 능력치를 올립니다. 5단계 달성 시 열리는 중요 효과들입니다.</p>
@@ -482,7 +577,7 @@
                 </div>
 
                 <!-- 도전의 탑 -->
-                <div id="tower" class="glass-card p-6 rounded-3xl border-l-4 border-orange-500">
+                <div id="tower" class="glass-card p-6 rounded-3xl border-l-4 border-orange-500 scroll-mt-24">
                     <h3 class="font-bold text-xl mb-4 text-orange-600 flex items-center"><i class="fas fa-dungeon mr-2"></i>도전의 탑</h3>
                     <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
                         <div class="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg text-xs">
@@ -505,7 +600,7 @@
                 </div>
 
                 <!-- 숨겨진 방 -->
-                <div id="hidden" class="glass-card p-6 rounded-3xl border-l-4 border-gray-500">
+                <div id="hidden" class="glass-card p-6 rounded-3xl border-l-4 border-gray-500 scroll-mt-24">
                     <h3 class="font-bold text-xl mb-4 text-gray-600 dark:text-gray-400 flex items-center"><i class="fas fa-door-open mr-2"></i>숨겨진 방 (방울)</h3>
                     <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
                         <p class="text-xs bg-gray-100 dark:bg-gray-800 p-2 rounded"><strong>조건:</strong> 치명타 확률 130% 확보 기준 (미달 시 치확 1순위)</p>
@@ -527,7 +622,7 @@
                 </div>
 
                 <!-- 메달 강화 -->
-                <div id="medal" class="glass-card p-6 rounded-3xl border-l-4 border-yellow-600">
+                <div id="medal" class="glass-card p-6 rounded-3xl border-l-4 border-yellow-600 scroll-mt-24">
                     <h3 class="font-bold text-xl mb-4 text-yellow-600 flex items-center"><i class="fas fa-medal mr-2"></i>메달 강화</h3>
                     <div class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
                         <ul class="space-y-2 text-xs md:text-sm">
@@ -1086,7 +1181,7 @@
                     title: '🍔 음식 덱 (디버프)',
                     members: '보안관잭, 파이로스, 츄리, 핫페퍼, 샌드위치백작, 스타링',
                     skills: '마법방패, 파티타임, 매콤한저주, 토핑폭격, 불사조소환, 사탕굴러가요',
-                    runes: '불사조 소환, 토핑 폭격, 매콤한 저주, 파티 타임, 블랙홀강화',
+                    runes: '불사조 소환, 토핑 폭격, 매콤한 저주, 파티 타임, 블랙홀감전',
                     desc: '디버프가 강해 KO 안나면 다 이김.',
                     score: { pve: 5, pvp: 2, cost: 2 },
                     type: 'food'
@@ -1255,12 +1350,7 @@
                 btn.classList.remove('nav-active');
                 btn.classList.remove('text-brand-500');
                 btn.classList.add('text-gray-400');
-                // Reset Special Icon Colors if not active
-                const icon = btn.querySelector('i');
-                if(icon && icon.classList.contains('fa-gift')) {
-                     icon.className = 'fas fa-gift text-xl mb-1 text-pink-500';
-                }
-
+                
                 if(btn.dataset.target === activeId) {
                     btn.classList.add('nav-active');
                     btn.classList.add('text-brand-500');
@@ -1312,10 +1402,30 @@
             display.innerText = score.toLocaleString() + " 점";
         }
 
-        // --- 5. DISTRIBUTION TOOLS (REMOVED) ---
-        // As requested, the distribution tool logic is removed.
+        // --- 4. PAYMENT MODAL LOGIC ---
+        function openPaymentModal() {
+            const modal = document.getElementById('payment-modal');
+            modal.classList.remove('hidden'); // Ensure it's visible
+            // Small delay to allow transition
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+        }
 
-        // --- 6. RENDER FUNCTIONS (FIXED) ---
+        function closePaymentModal() {
+            const modal = document.getElementById('payment-modal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.classList.add('hidden'); // Hide after transition
+            }, 300);
+        }
+
+        // Initialize: Ensure modal is hidden initially
+        document.addEventListener('DOMContentLoaded', () => {
+             document.getElementById('payment-modal').classList.add('hidden');
+        });
+
+        // --- 5. RENDER FUNCTIONS (FIXED) ---
         function renderDecks() {
             const container = document.getElementById('deck-container');
             if(!container) return;
