@@ -245,7 +245,7 @@
                     길드원이 아니시라면 이용이 제한되니<br>양해 부탁드립니다. 😌
                 </p>
                 <p class="text-xs text-gray-500 mt-3 border-t border-gray-700 pt-2">
-                    (관계자가 아니라면 뒤로가기를 눌러주세요)
+                    (암호: 라임 최고)
                 </p>
             </div>
             <input type="text" id="password-input" placeholder="암호 입력" 
@@ -951,6 +951,9 @@
                 <button onclick="scrollToId('medal')" class="snap-start flex-shrink-0 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-yellow-200 transition">
                     <i class="fas fa-medal mr-1"></i> 메달
                 </button>
+                <button onclick="scrollToId('academy')" class="snap-start flex-shrink-0 bg-blue-100 text-blue-700 px-4 py-2 rounded-xl font-bold text-sm hover:bg-blue-200 transition">
+                    <i class="fas fa-magic mr-1"></i> 아카데미
+                </button>
                 <button onclick="scrollToId('trophy')" class="snap-start flex-shrink-0 bg-yellow-400 text-yellow-900 px-4 py-2 rounded-xl font-bold text-sm hover:bg-yellow-500 transition">
                     <i class="fas fa-trophy mr-1"></i> 트로피
                 </button>
@@ -1007,6 +1010,92 @@
                                 <li><strong>대결의 파편:</strong> PvP 명중, PvP 회피</li>
                                 <li><strong>풍요의 파편:</strong> 격전지 점수 추가</li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 마법 아카데미 보상 리스트 (NEW) -->
+                <div id="academy" class="glass-card p-6 rounded-3xl border-l-4 border-blue-400 scroll-mt-24">
+                    <h3 class="font-bold text-xl mb-4 text-blue-600 flex items-center"><i class="fas fa-magic mr-2"></i>마법 아카데미 보상 리스트</h3>
+                    
+                    <div class="space-y-6 text-sm text-gray-700 dark:text-gray-300">
+                        <!-- 1. 그려그려 -->
+                        <div>
+                            <h4 class="font-bold text-blue-500 mb-2 border-b border-blue-100 dark:border-blue-900 pb-1">1. 그려그려</h4>
+                            <ul class="space-y-1 text-xs md:text-sm">
+                                <li>• NPC가 붓을 들고 고민한다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 5</span> / 현자의 깃펜 2</li>
+                                <li>• 물감이 튀어있다: <span class="text-brand-600 font-bold">[추천] 현자의 깃펜 4</span> / 현자의 깃펜 2</li>
+                                <li>• NPC가 진지한 표정이다: 지식의 잉크 2 / <span class="text-brand-600 font-bold">[추천] 숙련의 서 10</span></li>
+                                <li>• 큰 캔버스가 세워져있다: <span class="text-brand-600 font-bold">[추천] 현자의 깃펜 3</span> / 지식의 잉크 1</li>
+                                <li>• 바닥에 낙서가 가득하다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 5</span> / 현자의 깃펜 2</li>
+                                <li>• 색이 섞인 팔레트가 보인다: 숙련의 서 20 / <span class="text-brand-600 font-bold">[추천] 지혜의 서 1</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- 2. 닌자 -->
+                        <div>
+                            <h4 class="font-bold text-gray-600 dark:text-gray-400 mb-2 border-b border-gray-100 dark:border-gray-800 pb-1">2. 닌자</h4>
+                            <ul class="space-y-1 text-xs md:text-sm">
+                                <li>• 연막이 가득한 수련장에서 검은 그림자: <span class="text-brand-600 font-bold">[추천] 숙련의 서 5</span> / 현자의 깃펜 2</li>
+                                <li>• 닌자가 갑자기 눈 앞에 나타난다: <span class="text-brand-600 font-bold">[추천] 현자의 깃펜 4</span> / 지식의 잉크 2</li>
+                                <li>• 바람이 불며 천이 흔들린다: <span class="text-brand-600 font-bold">[추천] 현자의 깃펜 3</span> / 지식의 잉크 1</li>
+                                <li>• 조용한 공간에 발자국 소리만 들린다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 20</span> / 숙련의 서 10</li>
+                                <li>• 천장에서 닌자가 거꾸로 매달려 있다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 5</span> / 현자의 깃펜 2</li>
+                                <li>• 벽에 수리검이 정확히 박혀있다: 현자의 깃펜 2 / <span class="text-brand-600 font-bold">[추천] 현자의 깃펜 4</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- 3. 블럭개 -->
+                        <div>
+                            <h4 class="font-bold text-orange-500 mb-2 border-b border-orange-100 dark:border-orange-900 pb-1">3. 블럭개</h4>
+                            <ul class="space-y-1 text-xs md:text-sm">
+                                <li>• 블럭이 와르르 무너졌다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 5</span> / 현자의 깃펜 2</li>
+                                <li>• 알록달록한 블럭이 쌓여 있다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 5</span> / 현자의 깃펜 2</li>
+                                <li>• 무지개 블럭이 반짝인다: 숙련의 서 10 / <span class="text-brand-600 font-bold">[추천] 숙련의 서 20</span></li>
+                                <li>• 블럭이 일정한 리듬으로 떨어진다: 지식의 잉크 1 / <span class="text-brand-600 font-bold">[추천] 현자의 깃펜 4</span></li>
+                                <li>• 블럭 위에 고양이 발자국이 남아 있다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 10</span> / 현자의 깃펜 2</li>
+                                <li>• 블록을 다시 쌓는 NPC: 지식의 잉크 2 / <span class="text-brand-600 font-bold">[추천] 지혜의 서 1</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- 4. 현자 시리즈 (Table style for clarity) -->
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs md:text-sm border-collapse">
+                                <thead>
+                                    <tr class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">
+                                        <th class="p-2 text-left">현자 상황</th>
+                                        <th class="p-2 text-left">보상 선택 (좌/우)</th>
+                                        <th class="p-2 text-center whitespace-nowrap">친밀도</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                                    <tr class="bg-red-50/30 dark:bg-red-900/10"><td colspan="3" class="p-2 font-bold text-red-600">⚔️ 기사 현자</td></tr>
+                                    <tr><td class="p-2">검이 땅에 꽂혀 있다</td><td class="p-2">잉크 1 / <span class="text-brand-600 font-bold">[추천] 깃펜 3</span></td><td class="p-2 text-center">25</td></tr>
+                                    <tr><td class="p-2">갑옷이 햇빛에 반짝인다</td><td class="p-2">깃펜 2 / <span class="text-brand-600 font-bold">[추천] 서 5</span></td><td class="p-2 text-center">20</td></tr>
+                                    <tr><td class="p-2">깃발이 펄럭인다</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 깃펜 4</span> / 잉크 3</td><td class="p-2 text-center">20</td></tr>
+                                    <tr><td class="p-2">갑옷을 정비중이다</td><td class="p-2">깃펜 2 / <span class="text-brand-600 font-bold">[추천] 서 10</span></td><td class="p-2 text-center">15</td></tr>
+                                    <tr><td class="p-2">캣기사가 진지하게 선다</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 서 10</span> / 잉크 1</td><td class="p-2 text-center">25</td></tr>
+                                    <tr><td class="p-2 font-bold">검을 들고 자세를 잡는다</td><td class="p-2"><span class="text-red-500 font-bold">[추천] 발로르 표식 1</span> / ?</td><td class="p-2 text-center font-bold">30</td></tr>
+                                    
+                                    <tr class="bg-purple-50/30 dark:bg-purple-900/10"><td colspan="3" class="p-2 font-bold text-purple-600">🔮 법사 현자</td></tr>
+                                    <tr><td class="p-2">책이 산처럼 쌓여있다</td><td class="p-2">잉크 2 / <span class="text-brand-600 font-bold">[추천] 깃펜 4</span></td><td class="p-2 text-center">20</td></tr>
+                                    <tr><td class="p-2">현자가 책을 덮는다</td><td class="p-2">깃펜 3 / <span class="text-brand-600 font-bold">[추천] 깃펜 4</span></td><td class="p-2 text-center">20</td></tr>
+                                    <tr><td class="p-2">현자가 별을 본다</td><td class="p-2">잉크 1 / <span class="text-brand-600 font-bold">[추천] 깃펜 4</span></td><td class="p-2 text-center">20</td></tr>
+                                    <tr><td class="p-2">차 향이 은은하다</td><td class="p-2">서 5 / <span class="text-brand-600 font-bold">[추천] 서 10</span></td><td class="p-2 text-center">15</td></tr>
+                                    <tr><td class="p-2">현자가 눈을 감고 있다</td><td class="p-2">잉크 3 / <span class="text-brand-600 font-bold">[추천] 서 10</span></td><td class="p-2 text-center">20</td></tr>
+                                    <tr><td class="p-2 font-bold">현자가 미소를 짓는다</td><td class="p-2"><span class="text-purple-500 font-bold">[추천] 알테리온 표식 1</span> / ?</td><td class="p-2 text-center font-bold">30</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-xl border border-yellow-200 dark:border-yellow-700/50">
+                            <h4 class="font-bold text-yellow-700 dark:text-yellow-300 mb-1 flex items-center">
+                                <i class="fas fa-exclamation-triangle mr-2"></i>추가 안내 사항
+                            </h4>
+                            <p class="text-xs md:text-sm leading-relaxed">
+                                • 미니게임 진행 시, 포기하거나 실패해도 보상은 동일합니다.<br>
+                                • <span class="font-bold text-red-500">'표식'</span>을 주는 퀘스트는 등장 확률이 매우 낮으니 꼭 챙기세요!
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1462,19 +1551,6 @@
         }
 
         function updateNav(activeId) {
-            const mobileBtns = document.querySelectorAll('.nav-btn');
-            mobileBtns.forEach(btn => {
-                btn.classList.remove('nav-active');
-                btn.classList.remove('text-brand-500');
-                btn.classList.add('text-gray-400');
-                
-                if(btn.dataset.target === activeId) {
-                    btn.classList.add('nav-active');
-                    btn.classList.add('text-brand-500');
-                    btn.classList.remove('text-gray-400');
-                }
-            });
-
             const sidebarBtns = document.querySelectorAll('.sidebar-btn');
             sidebarBtns.forEach(btn => {
                 btn.classList.remove('sidebar-active');
@@ -1495,7 +1571,7 @@
                 document.execCommand('copy');
                 showToast();
             } catch (err) {
-                alert("복사 실패");
+                console.error("복사 실패");
             }
             document.body.removeChild(textArea);
         }
@@ -1527,8 +1603,7 @@
         // --- 4. PAYMENT MODAL LOGIC ---
         function openPaymentModal() {
             const modal = document.getElementById('payment-modal');
-            modal.classList.remove('hidden'); // Ensure it's visible
-            // Small delay to allow transition
+            modal.classList.remove('hidden'); 
             setTimeout(() => {
                 modal.classList.add('active');
             }, 10);
@@ -1538,16 +1613,11 @@
             const modal = document.getElementById('payment-modal');
             modal.classList.remove('active');
             setTimeout(() => {
-                modal.classList.add('hidden'); // Hide after transition
+                modal.classList.add('hidden'); 
             }, 300);
         }
 
-        // Initialize: Ensure modal is hidden initially
-        document.addEventListener('DOMContentLoaded', () => {
-             document.getElementById('payment-modal').classList.add('hidden');
-        });
-
-        // --- 5. RENDER FUNCTIONS (FIXED) ---
+        // --- 5. RENDER FUNCTIONS ---
         function renderDecks() {
             const container = document.getElementById('deck-container');
             if(!container) return;
@@ -1577,22 +1647,14 @@
                 decks.forEach(deck => {
                     const card = document.createElement('div');
                     let borderColor = 'gray';
-                    // Image for specific decks
-                    let deckImage = ''; 
-                    
-                    if (deck.type === 'cat') {
-                        borderColor = 'yellow';
-                    }
-                    if (deck.type === 'pirate') {
-                        borderColor = 'indigo';
-                    }
+                    if (deck.type === 'cat') borderColor = 'yellow';
+                    if (deck.type === 'pirate') borderColor = 'indigo';
                     if (deck.type === 'wolf') borderColor = 'blue';
                     if (deck.type === 'food') borderColor = 'red';
 
                     card.className = `glass-card p-5 rounded-2xl relative border-t-4 border-${borderColor}-400 hover:scale-[1.02] transition-transform duration-300`;
                     
                     card.innerHTML = `
-                        ${deckImage}
                         <div class="flex items-center gap-3 mb-3">
                             <div class="text-3xl">${deck.title.split(' ')[0]}</div>
                             <div>
@@ -1626,11 +1688,8 @@
             localStorage.theme = isDark ? 'dark' : 'light';
         }
 
-        const pcThemeToggle = document.getElementById('pc-theme-toggle');
-        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-
-        if (pcThemeToggle) pcThemeToggle.addEventListener('click', toggleTheme);
-        if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+        document.getElementById('pc-theme-toggle').addEventListener('click', toggleTheme);
+        document.getElementById('mobile-theme-toggle').addEventListener('click', toggleTheme);
 
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
