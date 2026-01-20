@@ -695,77 +695,107 @@
                 </div>
             </div>
 
-            <!-- 신화/전설 각성 수치 정보 (NEW) -->
+            <!-- 신화/전설 각성 수치 정보 (UPDATED & MATCHED SIZE) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <!-- 신화 등급 수치 -->
-                <div class="glass-card p-6 rounded-3xl border-t-4 border-red-500">
-                    <h3 class="font-bold text-xl mb-4 text-red-600 flex items-center"><i class="fas fa-star mr-2"></i>신화 등급 전체 수치</h3>
-                    <div class="max-h-96 overflow-y-auto custom-scrollbar text-[11px] md:text-xs">
-                        <table class="w-full text-left">
-                            <thead class="sticky top-0 bg-white dark:bg-gray-800">
+                <!-- 신화 각성 수치 -->
+                <div class="glass-card p-6 rounded-3xl border-t-4 border-red-500 h-full flex flex-col">
+                    <h3 class="font-bold text-xl mb-4 text-red-600 flex items-center"><i class="fas fa-star mr-2"></i>📘 신화 각성 수치</h3>
+                    <div class="max-h-[380px] overflow-y-auto custom-scrollbar text-[11px] md:text-xs flex-1">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="sticky top-0 bg-white dark:bg-gray-800 z-10">
                                 <tr class="text-gray-500 border-b">
-                                    <th class="p-2">단계</th>
+                                    <th class="p-2 w-1/4">단계</th>
                                     <th class="p-2 text-right">수치 (%)</th>
                                     <th class="p-2 text-right">증가비율</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
-                                <tr><td class="p-2 font-bold">13성</td><td class="p-2 text-right">200%</td><td class="p-2 text-right">-</td></tr>
-                                <tr><td class="p-2 font-bold">14성</td><td class="p-2 text-right">300%</td><td class="p-2 text-right">50.0%</td></tr>
-                                <tr><td class="p-2 font-bold">15성</td><td class="p-2 text-right">500%</td><td class="p-2 text-right">66.7%</td></tr>
-                                <tr><td class="p-2 font-bold">16성</td><td class="p-2 text-right">1,000%</td><td class="p-2 text-right">100.0%</td></tr>
-                                <tr><td class="p-2 font-bold">17성</td><td class="p-2 text-right">2,000%</td><td class="p-2 text-right">100.0%</td></tr>
-                                <tr><td class="p-2 font-bold">18성</td><td class="p-2 text-right">3,500%</td><td class="p-2 text-right">75.0%</td></tr>
-                                <tr><td class="p-2 font-bold">19성</td><td class="p-2 text-right">6,000%</td><td class="p-2 text-right">71.4%</td></tr>
-                                <tr><td class="p-2 font-bold">20성</td><td class="p-2 text-right">10,000%</td><td class="p-2 text-right">66.7%</td></tr>
-                                <tr><td class="p-2 font-bold">21성</td><td class="p-2 text-right">18,000%</td><td class="p-2 text-right">80.0%</td></tr>
-                                <tr><td class="p-2 font-bold">22성</td><td class="p-2 text-right">30,000%</td><td class="p-2 text-right">66.7%</td></tr>
-                                <tr><td class="p-2 font-bold">23성</td><td class="p-2 text-right">55,000%</td><td class="p-2 text-right">83.3%</td></tr>
-                                <tr><td class="p-2 font-bold">24성</td><td class="p-2 text-right">100,000%</td><td class="p-2 text-right">81.8%</td></tr>
-                                <tr><td class="p-2 font-bold">25성</td><td class="p-2 text-right">180,000%</td><td class="p-2 text-right">80.0%</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">13성</td><td class="p-2 text-right">200%</td><td class="p-2 text-right text-gray-400">-</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">14성</td><td class="p-2 text-right">300%</td><td class="p-2 text-right text-brand-600">50.0%</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">15성</td><td class="p-2 text-right">500%</td><td class="p-2 text-right text-brand-600">66.7%</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">16성</td><td class="p-2 text-right">1,000%</td><td class="p-2 text-right text-brand-600">100.0%</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">17성</td><td class="p-2 text-right">2,000%</td><td class="p-2 text-right text-brand-600">100.0%</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">18성</td><td class="p-2 text-right">3,500%</td><td class="p-2 text-right text-brand-600">75.0%</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">19성</td><td class="p-2 text-right">6,000%</td><td class="p-2 text-right text-brand-600">71.4%</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">20성</td><td class="p-2 text-right">10,000%</td><td class="p-2 text-right text-brand-600">66.7%</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">21성</td><td class="p-2 text-right">18,000%</td><td class="p-2 text-right text-brand-600">80.0%</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">22성</td><td class="p-2 text-right">30,000%</td><td class="p-2 text-right text-brand-600">66.7%</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">23성</td><td class="p-2 text-right">55,000%</td><td class="p-2 text-right text-brand-600">83.3%</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">24성</td><td class="p-2 text-right">100,000%</td><td class="p-2 text-right text-brand-600">81.8%</td></tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/30"><td class="p-2 font-bold">25성</td><td class="p-2 text-right">180,000%</td><td class="p-2 text-right text-brand-600">80.0%</td></tr>
                                 <tr class="bg-red-50 dark:bg-red-900/20 font-bold"><td class="p-2">1각성</td><td class="p-2 text-right">270,000%</td><td class="p-2 text-right">50.0%</td></tr>
                                 <tr class="bg-red-50 dark:bg-red-900/20 font-bold"><td class="p-2">2각성</td><td class="p-2 text-right">360,000%</td><td class="p-2 text-right">33.3%</td></tr>
                                 <tr class="bg-red-50 dark:bg-red-900/20 font-bold"><td class="p-2">3각성</td><td class="p-2 text-right">540,000%</td><td class="p-2 text-right">50.0%</td></tr>
                                 <tr class="bg-red-50 dark:bg-red-900/20 font-bold"><td class="p-2">4각성</td><td class="p-2 text-right">810,000%</td><td class="p-2 text-right">50.0%</td></tr>
                                 <tr class="bg-red-50 dark:bg-red-900/20 font-bold"><td class="p-2">5각성</td><td class="p-2 text-right">1,080,000%</td><td class="p-2 text-right">33.3%</td></tr>
+                                <tr class="bg-red-50 dark:bg-red-900/20 font-bold"><td class="p-2">6각성</td><td class="p-2 text-right">1,620,000%</td><td class="p-2 text-right">50.0%</td></tr>
+                                <tr class="bg-red-50 dark:bg-red-900/20 font-bold"><td class="p-2">7각성</td><td class="p-2 text-right">2,340,000%</td><td class="p-2 text-right">44.4%</td></tr>
+                                <tr class="bg-red-50 dark:bg-red-900/20 font-bold"><td class="p-2">8각성</td><td class="p-2 text-right">3,060,000%</td><td class="p-2 text-right">30.8%</td></tr>
+                                <tr class="bg-red-50 dark:bg-red-900/20 font-bold"><td class="p-2">9각성</td><td class="p-2 text-right">3,780,000%</td><td class="p-2 text-right">23.5%</td></tr>
                                 <tr class="bg-red-50 dark:bg-red-900/20 font-bold"><td class="p-2">10각성</td><td class="p-2 text-right">4,680,000%</td><td class="p-2 text-right">23.8%</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- 전설 등급 수치 -->
-                <div class="space-y-6">
-                    <div class="glass-card p-6 rounded-3xl border-t-4 border-orange-400 text-[11px] md:text-xs">
-                        <h3 class="font-bold text-xl mb-4 text-orange-600 flex items-center"><i class="fas fa-award mr-2"></i>전설 등급 전체 수치</h3>
-                        <div class="max-h-60 overflow-y-auto custom-scrollbar">
-                            <table class="w-full text-left">
-                                <thead class="sticky top-0 bg-white dark:bg-gray-800">
+                <!-- 전설 각성 수치 -->
+                <div class="space-y-6 flex flex-col">
+                    <div class="glass-card p-6 rounded-3xl border-t-4 border-orange-400 h-full flex flex-col">
+                        <h3 class="font-bold text-xl mb-4 text-orange-600 flex items-center"><i class="fas fa-award mr-2"></i>📙 전설 각성 수치</h3>
+                        <div class="max-h-[380px] overflow-y-auto custom-scrollbar text-[11px] md:text-xs flex-1">
+                            <table class="w-full text-left border-collapse">
+                                <thead class="sticky top-0 bg-white dark:bg-gray-800 z-10">
                                     <tr class="text-gray-500 border-b">
-                                        <th class="p-2">단계</th>
+                                        <th class="p-2 w-1/4">단계</th>
                                         <th class="p-2 text-right">수치 (%)</th>
                                         <th class="p-2 text-right">증가비율</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
-                                    <tr><td class="p-2 font-bold">13성</td><td class="p-2 text-right">50%</td><td class="p-2 text-right">-</td></tr>
-                                    <tr><td class="p-2 font-bold">25성</td><td class="p-2 text-right">15,000%</td><td class="p-2 text-right">15.4%</td></tr>
+                                    <tr><td class="p-2 font-bold">13성</td><td class="p-2 text-right">50%</td><td class="p-2 text-right text-gray-400">-</td></tr>
+                                    <tr><td class="p-2 font-bold">14성</td><td class="p-2 text-right">150%</td><td class="p-2 text-right text-orange-500">200.0%</td></tr>
+                                    <tr><td class="p-2 font-bold">15성</td><td class="p-2 text-right">300%</td><td class="p-2 text-right text-orange-500">100.0%</td></tr>
+                                    <tr><td class="p-2 font-bold">16성</td><td class="p-2 text-right">600%</td><td class="p-2 text-right text-orange-500">100.0%</td></tr>
+                                    <tr><td class="p-2 font-bold">17성</td><td class="p-2 text-right">1,200%</td><td class="p-2 text-right text-orange-500">100.0%</td></tr>
+                                    <tr><td class="p-2 font-bold">18성</td><td class="p-2 text-right">2,000%</td><td class="p-2 text-right text-orange-500">66.7%</td></tr>
+                                    <tr><td class="p-2 font-bold">19성</td><td class="p-2 text-right">3,200%</td><td class="p-2 text-right text-orange-500">60.0%</td></tr>
+                                    <tr><td class="p-2 font-bold">20성</td><td class="p-2 text-right">5,000%</td><td class="p-2 text-right text-orange-500">56.3%</td></tr>
+                                    <tr><td class="p-2 font-bold">21성</td><td class="p-2 text-right">7,000%</td><td class="p-2 text-right text-orange-500">40.0%</td></tr>
+                                    <tr><td class="p-2 font-bold">22성</td><td class="p-2 text-right">9,000%</td><td class="p-2 text-right text-orange-500">28.6%</td></tr>
+                                    <tr><td class="p-2 font-bold">23성</td><td class="p-2 text-right">11,000%</td><td class="p-2 text-right text-orange-500">22.2%</td></tr>
+                                    <tr><td class="p-2 font-bold">24성</td><td class="p-2 text-right">13,000%</td><td class="p-2 text-right text-orange-500">18.2%</td></tr>
+                                    <tr><td class="p-2 font-bold">25성</td><td class="p-2 text-right">15,000%</td><td class="p-2 text-right text-orange-500">15.4%</td></tr>
                                     <tr class="bg-orange-50 dark:bg-orange-900/20 font-bold"><td class="p-2">1각성</td><td class="p-2 text-right">22,500%</td><td class="p-2 text-right">50.0%</td></tr>
+                                    <tr class="bg-orange-50 dark:bg-orange-900/20 font-bold"><td class="p-2">2각성</td><td class="p-2 text-right">30,000%</td><td class="p-2 text-right">33.3%</td></tr>
+                                    <tr class="bg-orange-50 dark:bg-orange-900/20 font-bold"><td class="p-2">3각성</td><td class="p-2 text-right">45,000%</td><td class="p-2 text-right">50.0%</td></tr>
+                                    <tr class="bg-orange-50 dark:bg-orange-900/20 font-bold"><td class="p-2">4각성</td><td class="p-2 text-right">67,500%</td><td class="p-2 text-right">50.0%</td></tr>
                                     <tr class="bg-orange-50 dark:bg-orange-900/20 font-bold"><td class="p-2">5각성</td><td class="p-2 text-right">90,000%</td><td class="p-2 text-right">33.3%</td></tr>
+                                    <tr class="bg-orange-50 dark:bg-orange-900/20 font-bold"><td class="p-2">6각성</td><td class="p-2 text-right">135,000%</td><td class="p-2 text-right">50.0%</td></tr>
+                                    <tr class="bg-orange-50 dark:bg-orange-900/20 font-bold"><td class="p-2">7각성</td><td class="p-2 text-right">195,000%</td><td class="p-2 text-right">44.4%</td></tr>
+                                    <tr class="bg-orange-50 dark:bg-orange-900/20 font-bold"><td class="p-2">8각성</td><td class="p-2 text-right">255,000%</td><td class="p-2 text-right">30.8%</td></tr>
+                                    <tr class="bg-orange-50 dark:bg-orange-900/20 font-bold"><td class="p-2">9각성</td><td class="p-2 text-right">315,000%</td><td class="p-2 text-right">23.5%</td></tr>
                                     <tr class="bg-orange-50 dark:bg-orange-900/20 font-bold"><td class="p-2">10각성</td><td class="p-2 text-right">390,000%</td><td class="p-2 text-right">23.8%</td></tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="glass-card p-6 rounded-3xl border-t-4 border-green-500">
-                        <h3 class="font-bold text-xl mb-4 text-green-600 flex items-center"><i class="fas fa-bolt mr-2"></i>공통 각성 단계 수치</h3>
-                        <div class="grid grid-cols-2 gap-2 text-[11px] md:text-xs">
-                            <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded">1각: 50%</div>
-                            <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded">5각: 500%</div>
-                            <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded">10각: 2,500%</div>
-                        </div>
-                    </div>
+            <!-- 공통 각성 수치 -->
+            <div class="mt-6 glass-card p-6 rounded-3xl border-t-4 border-green-500">
+                <h3 class="font-bold text-xl mb-4 text-green-600 flex items-center"><i class="fas fa-bolt mr-2"></i>📗 공통 각성(Awakening) 단계 수치</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-[11px] md:text-xs text-center font-medium">
+                    <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded border border-green-100 dark:border-green-800">1각: 50%</div>
+                    <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded border border-green-100 dark:border-green-800">2각: 100%</div>
+                    <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded border border-green-100 dark:border-green-800">3각: 200%</div>
+                    <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded border border-green-100 dark:border-green-800">4각: 350%</div>
+                    <div class="p-2 bg-green-100 dark:bg-green-800/40 rounded border border-green-200 dark:border-green-700 font-bold text-brand-600 dark:text-brand-400">5각: 500%</div>
+                    <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded border border-green-100 dark:border-green-800">6각: 800%</div>
+                    <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded border border-green-100 dark:border-green-800">7각: 1,200%</div>
+                    <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded border border-green-100 dark:border-green-800">8각: 1,600%</div>
+                    <div class="p-2 bg-green-50 dark:bg-green-900/20 rounded border border-green-100 dark:border-green-800">9각: 2,000%</div>
+                    <div class="p-2 bg-green-100 dark:bg-green-800/40 rounded border border-green-200 dark:border-green-700 font-bold text-brand-600 dark:text-brand-400">10각: 2,500%</div>
                 </div>
             </div>
 
@@ -1209,7 +1239,7 @@
                         <!-- 늑대 덱 (Wolf) -->
                         <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-100 dark:border-blue-800/50">
                             <h4 class="font-bold text-blue-700 dark:text-blue-300 mb-2 flex items-center">
-                                <i class="fas fa-wolf-pack-battalion mr-2"></i>🐺 3. 도전의 탑: 늑대 능력 우선순위
+                                <i class="fas fa-paw mr-2"></i> 3. 도전의 탑: 늑대 능력 우선순위
                             </h4>
                             <ol class="list-decimal list-inside space-y-1 mb-3 font-medium">
                                 <li><span class="text-brand-600">1순위:</span> 동료렙, 스킬쿨감</li>
@@ -1291,7 +1321,7 @@
                     
                     <div class="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-xl mb-4 border border-yellow-200 dark:border-yellow-700">
                          <p class="text-xs text-yellow-800 dark:text-yellow-200 font-bold text-center">
-                             ⚠️ 주의: 내용이 정확하지 않을 수 있습니다.
+                            ⚠️ 주의: 내용이 정확하지 않을 수 있습니다.
                          </p>
                     </div>
 
@@ -1503,7 +1533,7 @@
                 {
                     title: '👑 고양이 덱 1 (육각형)',
                     members: '쿠무루, 오라클, 메카네코, 룰루, 클라우디, 스타링',
-                    skills: '마법방패, 발도술, 캣히어로즈, 고양이신선, 해적표식, 레이저소환',
+                    skills: '마법방패, 발도술, 캣히어로즈, 고양이신선, 해적표식, 슈퍼캣',
                     runes: '고양이 신선 강화, 발도술강화, 캣히어로즈 강화',
                     desc: '완벽한 밸런스. PvP PvE 모두 준수.',
                     score: { pve: 4, pvp: 4, cost: 4 },
