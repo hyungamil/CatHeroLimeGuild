@@ -613,26 +613,7 @@
             </button>
             <h2 class="text-3xl font-display mb-6 text-gray-800 dark:text-white">성장 & VIP</h2>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                <!-- 증표 분배 -->
-                <div class="glass-card p-6 rounded-3xl">
-                    <h3 class="font-bold text-lg mb-4">숙련 증표 분배</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded-xl text-sm">
-                            <strong class="text-indigo-600 block">🏴‍☠️ 해적</strong> 김동순, 노들, 장국, 613.콘스, 고기쟁이
-                        </div>
-                        <div class="bg-blue-50 dark:bg-blue-900/30 p-3 rounded-xl text-sm">
-                            <strong class="text-blue-600 block">🐺 늑대</strong> 벼리, 하구바, 일민, 캣핑, 동삐, 포저, 나는도비
-                        </div>
-                        <div class="bg-red-50 dark:bg-red-900/30 p-3 rounded-xl text-sm">
-                            <strong class="text-red-600 block">🍔 음식</strong> 마자유, 창식
-                        </div>
-                        <div class="bg-yellow-50 dark:bg-yellow-900/30 p-3 rounded-xl text-sm">
-                            <strong class="text-yellow-600 block">🐱 고양이</strong> 라익늑냥, 유나, 613/베리발
-                        </div>
-                    </div>
-                </div>
-
+            <div class="grid grid-cols-1 gap-6 mb-8">
                 <!-- VIP 표 (FULL) -->
                 <div class="glass-card p-6 rounded-3xl overflow-hidden">
                     <h3 class="font-bold text-lg mb-4">VIP 등급 혜택 (전체)</h3>
@@ -653,7 +634,7 @@
                                 <tr class="bg-blue-50 dark:bg-blue-900/10"><td class="px-3 py-2 font-bold text-blue-500">VIP Dia</td><td class="px-3 py-2">570,800</td><td>금화x400, 던전1000%, 어항1000, 대포800, 스킬400, 동료100, 룬100, 빛재련5, 재련20, 탈것7, 신화픽업20, 외형재료10, 마을상자1</td></tr>
                                 <tr class="bg-pink-50 dark:bg-pink-900/10"><td class="px-3 py-2 font-bold text-pink-500">VIP Rubi</td><td class="px-3 py-2">720,800</td><td>금화x600, 던전1200%, 어항1200, 대포1000, 스킬500, 동료120, 룬120, 빛재련10, 재련30, 탈것10, 신화픽업30, 외형재료20, 마을상자2, 외형소환2</td></tr>
                                 <tr class="bg-green-50 dark:bg-green-900/10"><td class="px-3 py-2 font-bold text-green-600">Emerald</td><td class="px-3 py-2">870,800</td><td>금화x800, 던전1400%, 어항1300, 대포1200, 스킬600, 동료150, 룬150, 빛재련15, 재련50, 탈것15, 신화픽업50, 외형재료30, 마을상자3, 외형소환3, <strong>영혼석+1</strong></td></tr>
-                                <tr class="bg-blue-100 dark:bg-blue-900/20"><td class="px-3 py-2 font-bold text-blue-600">Sapphire</td><td class="px-3 py-2">1,020,800</td><td>금화x1000, 던전1600%, 어항1400, 대포1400, 스킬700, 동료180, 룬180, 빛재련20, 재련70, 탈것20, 신화픽업70, 외형재료40, 마을상자4, 외형소환4</td></tr>
+                                <tr class="bg-blue-100 dark:bg-blue-900/20"><td class="px-3 py-2 font-bold text-blue-600">Sapphire</td><td class="px-3 py-2">1,020,800</td><td>금화x1000, 던전1600%, 어항1400, 대포1400, 스킬700, 동료180, 룬180, 빛재련20, 재련70, 탈것20, 신화픽업70, 외형재료40, 마을상자4, 외형소환4, <strong>영혼석+1</strong></td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -1014,75 +995,101 @@
                     </div>
                 </div>
 
-                <!-- 마법 아카데미 보상 리스트 (NEW) -->
+                <!-- 마법 아카데미 보상 리스트 -->
                 <div id="academy" class="glass-card p-6 rounded-3xl border-l-4 border-blue-400 scroll-mt-24">
                     <h3 class="font-bold text-xl mb-4 text-blue-600 flex items-center"><i class="fas fa-magic mr-2"></i>마법 아카데미 보상 리스트</h3>
                     
-                    <div class="space-y-6 text-sm text-gray-700 dark:text-gray-300">
+                    <div class="space-y-8 text-sm text-gray-700 dark:text-gray-300">
+                        
                         <!-- 1. 그려그려 -->
-                        <div>
-                            <h4 class="font-bold text-blue-500 mb-2 border-b border-blue-100 dark:border-blue-900 pb-1">1. 그려그려</h4>
-                            <ul class="space-y-1 text-xs md:text-sm">
-                                <li>• NPC가 붓을 들고 고민한다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 5</span> / 현자의 깃펜 2</li>
-                                <li>• 물감이 튀어있다: <span class="text-brand-600 font-bold">[추천] 현자의 깃펜 4</span> / 현자의 깃펜 2</li>
-                                <li>• NPC가 진지한 표정이다: 지식의 잉크 2 / <span class="text-brand-600 font-bold">[추천] 숙련의 서 10</span></li>
-                                <li>• 큰 캔버스가 세워져있다: <span class="text-brand-600 font-bold">[추천] 현자의 깃펜 3</span> / 지식의 잉크 1</li>
-                                <li>• 바닥에 낙서가 가득하다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 5</span> / 현자의 깃펜 2</li>
-                                <li>• 색이 섞인 팔레트가 보인다: 숙련의 서 20 / <span class="text-brand-600 font-bold">[추천] 지혜의 서 1</span></li>
-                            </ul>
+                        <div class="overflow-x-auto">
+                            <h4 class="font-bold text-blue-500 mb-2 px-1">🎨 1. 그려그려</h4>
+                            <table class="w-full text-xs md:text-sm border-collapse mb-4">
+                                <thead>
+                                    <tr class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-left">
+                                        <th class="p-2 w-1/2">스크립트 (상황)</th>
+                                        <th class="p-2">보상 선택 (좌 / 우)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                                    <tr><td class="p-2">NPC가 붓을 들고 고민한다</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 숙련 5</span> / 깃펜 2</td></tr>
+                                    <tr><td class="p-2">물감이 튀어있다</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 깃펜 4</span> / 깃펜 2</td></tr>
+                                    <tr><td class="p-2">NPC가 진지한 표정이다</td><td class="p-2">잉크 2 / <span class="text-brand-600 font-bold">[추천] 숙련 10</span></td></tr>
+                                    <tr><td class="p-2">큰 캔버스가 세워져있다</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 깃펜 3</span> / 잉크 1</td></tr>
+                                    <tr><td class="p-2">바닥에 낙서가 가득하다</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 숙련 5</span> / 깃펜 2</td></tr>
+                                    <tr><td class="p-2">색이 섞인 팔레트가 보인다</td><td class="p-2">숙련 20 / <span class="text-brand-600 font-bold">[추천] 지혜 1</span></td></tr>
+                                </tbody>
+                            </table>
                         </div>
 
                         <!-- 2. 닌자 -->
-                        <div>
-                            <h4 class="font-bold text-gray-600 dark:text-gray-400 mb-2 border-b border-gray-100 dark:border-gray-800 pb-1">2. 닌자</h4>
-                            <ul class="space-y-1 text-xs md:text-sm">
-                                <li>• 연막이 가득한 수련장에서 검은 그림자: <span class="text-brand-600 font-bold">[추천] 숙련의 서 5</span> / 현자의 깃펜 2</li>
-                                <li>• 닌자가 갑자기 눈 앞에 나타난다: <span class="text-brand-600 font-bold">[추천] 현자의 깃펜 4</span> / 지식의 잉크 2</li>
-                                <li>• 바람이 불며 천이 흔들린다: <span class="text-brand-600 font-bold">[추천] 현자의 깃펜 3</span> / 지식의 잉크 1</li>
-                                <li>• 조용한 공간에 발자국 소리만 들린다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 20</span> / 숙련의 서 10</li>
-                                <li>• 천장에서 닌자가 거꾸로 매달려 있다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 5</span> / 현자의 깃펜 2</li>
-                                <li>• 벽에 수리검이 정확히 박혀있다: 현자의 깃펜 2 / <span class="text-brand-600 font-bold">[추천] 현자의 깃펜 4</span></li>
-                            </ul>
+                        <div class="overflow-x-auto">
+                            <h4 class="font-bold text-gray-600 dark:text-gray-400 mb-2 px-1">🥷 2. 닌자</h4>
+                            <table class="w-full text-xs md:text-sm border-collapse mb-4">
+                                <thead>
+                                    <tr class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-left">
+                                        <th class="p-2 w-1/2">스크립트 (상황)</th>
+                                        <th class="p-2">보상 선택 (좌 / 우)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                                    <tr><td class="p-2">연막 수련장에서 검은 그림자</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 숙련 5</span> / 깃펜 2</td></tr>
+                                    <tr><td class="p-2">닌자가 갑자기 눈 앞에 나타남</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 깃펜 4</span> / 잉크 2</td></tr>
+                                    <tr><td class="p-2">바람이 불며 천이 흔들림</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 깃펜 3</span> / 잉크 1</td></tr>
+                                    <tr><td class="p-2">조용한 공간에 발자국 소리만</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 숙련 20</span> / 숙련 10</td></tr>
+                                    <tr><td class="p-2">천장에서 닌자가 거꾸로 매달림</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 숙련 5</span> / 깃펜 2</td></tr>
+                                    <tr><td class="p-2">벽에 수리검이 정확히 박혀있다</td><td class="p-2">깃펜 2 / <span class="text-brand-600 font-bold">[추천] 깃펜 4</span></td></tr>
+                                </tbody>
+                            </table>
                         </div>
 
                         <!-- 3. 블럭개 -->
-                        <div>
-                            <h4 class="font-bold text-orange-500 mb-2 border-b border-orange-100 dark:border-orange-900 pb-1">3. 블럭개</h4>
-                            <ul class="space-y-1 text-xs md:text-sm">
-                                <li>• 블럭이 와르르 무너졌다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 5</span> / 현자의 깃펜 2</li>
-                                <li>• 알록달록한 블럭이 쌓여 있다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 5</span> / 현자의 깃펜 2</li>
-                                <li>• 무지개 블럭이 반짝인다: 숙련의 서 10 / <span class="text-brand-600 font-bold">[추천] 숙련의 서 20</span></li>
-                                <li>• 블럭이 일정한 리듬으로 떨어진다: 지식의 잉크 1 / <span class="text-brand-600 font-bold">[추천] 현자의 깃펜 4</span></li>
-                                <li>• 블럭 위에 고양이 발자국이 남아 있다: <span class="text-brand-600 font-bold">[추천] 숙련의 서 10</span> / 현자의 깃펜 2</li>
-                                <li>• 블록을 다시 쌓는 NPC: 지식의 잉크 2 / <span class="text-brand-600 font-bold">[추천] 지혜의 서 1</span></li>
-                            </ul>
+                        <div class="overflow-x-auto">
+                            <h4 class="font-bold text-orange-500 mb-2 px-1">🧱 3. 블럭개</h4>
+                            <table class="w-full text-xs md:text-sm border-collapse mb-4">
+                                <thead>
+                                    <tr class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-left">
+                                        <th class="p-2 w-1/2">스크립트 (상황)</th>
+                                        <th class="p-2">보상 선택 (좌 / 우)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                                    <tr><td class="p-2">블럭이 와르르 무너졌다</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 숙련 5</span> / 깃펜 2</td></tr>
+                                    <tr><td class="p-2">알록달록한 블럭이 쌓여 있다</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 숙련 5</span> / 깃펜 2</td></tr>
+                                    <tr><td class="p-2">무지개 블럭이 반짝인다</td><td class="p-2">숙련 10 / <span class="text-brand-600 font-bold">[추천] 숙련 20</span></td></tr>
+                                    <tr><td class="p-2">블럭이 일정한 리듬으로 떨어진다</td><td class="p-2">잉크 1 / <span class="text-brand-600 font-bold">[추천] 깃펜 4</span></td></tr>
+                                    <tr><td class="p-2">블럭 위에 고양이 발자국</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 숙련 10</span> / 깃펜 2</td></tr>
+                                    <tr><td class="p-2">블록을 다시 쌓는 NPC</td><td class="p-2">잉크 2 / <span class="text-brand-600 font-bold">[추천] 지혜 1</span></td></tr>
+                                </tbody>
+                            </table>
                         </div>
 
-                        <!-- 4. 현자 시리즈 (Table style for clarity) -->
+                        <!-- 4 & 5 현자 (기존 표 유지 및 영혼석 등 텍스트 강조) -->
                         <div class="overflow-x-auto">
+                            <h4 class="font-bold text-gray-700 dark:text-gray-200 mb-2 px-1">👴 현자 시리즈</h4>
                             <table class="w-full text-xs md:text-sm border-collapse">
                                 <thead>
                                     <tr class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">
                                         <th class="p-2 text-left">현자 상황</th>
-                                        <th class="p-2 text-left">보상 선택 (좌/우)</th>
+                                        <th class="p-2 text-left">보상 선택 (좌 / 우)</th>
                                         <th class="p-2 text-center whitespace-nowrap">친밀도</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
                                     <tr class="bg-red-50/30 dark:bg-red-900/10"><td colspan="3" class="p-2 font-bold text-red-600">⚔️ 기사 현자</td></tr>
                                     <tr><td class="p-2">검이 땅에 꽂혀 있다</td><td class="p-2">잉크 1 / <span class="text-brand-600 font-bold">[추천] 깃펜 3</span></td><td class="p-2 text-center">25</td></tr>
-                                    <tr><td class="p-2">갑옷이 햇빛에 반짝인다</td><td class="p-2">깃펜 2 / <span class="text-brand-600 font-bold">[추천] 서 5</span></td><td class="p-2 text-center">20</td></tr>
+                                    <tr><td class="p-2">갑옷이 햇빛에 반짝인다</td><td class="p-2">깃펜 2 / <span class="text-brand-600 font-bold">[추천] 숙련 5</span></td><td class="p-2 text-center">20</td></tr>
                                     <tr><td class="p-2">깃발이 펄럭인다</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 깃펜 4</span> / 잉크 3</td><td class="p-2 text-center">20</td></tr>
-                                    <tr><td class="p-2">갑옷을 정비중이다</td><td class="p-2">깃펜 2 / <span class="text-brand-600 font-bold">[추천] 서 10</span></td><td class="p-2 text-center">15</td></tr>
-                                    <tr><td class="p-2">캣기사가 진지하게 선다</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 서 10</span> / 잉크 1</td><td class="p-2 text-center">25</td></tr>
+                                    <tr><td class="p-2">갑옷을 정비중이다</td><td class="p-2">깃펜 2 / <span class="text-brand-600 font-bold">[추천] 숙련 10</span></td><td class="p-2 text-center">15</td></tr>
+                                    <tr><td class="p-2">캣기사가 진지하게 선다</td><td class="p-2"><span class="text-brand-600 font-bold">[추천] 숙련 10</span> / 잉크 1</td><td class="p-2 text-center">25</td></tr>
                                     <tr><td class="p-2 font-bold">검을 들고 자세를 잡는다</td><td class="p-2"><span class="text-red-500 font-bold">[추천] 발로르 표식 1</span> / ?</td><td class="p-2 text-center font-bold">30</td></tr>
                                     
                                     <tr class="bg-purple-50/30 dark:bg-purple-900/10"><td colspan="3" class="p-2 font-bold text-purple-600">🔮 법사 현자</td></tr>
                                     <tr><td class="p-2">책이 산처럼 쌓여있다</td><td class="p-2">잉크 2 / <span class="text-brand-600 font-bold">[추천] 깃펜 4</span></td><td class="p-2 text-center">20</td></tr>
                                     <tr><td class="p-2">현자가 책을 덮는다</td><td class="p-2">깃펜 3 / <span class="text-brand-600 font-bold">[추천] 깃펜 4</span></td><td class="p-2 text-center">20</td></tr>
                                     <tr><td class="p-2">현자가 별을 본다</td><td class="p-2">잉크 1 / <span class="text-brand-600 font-bold">[추천] 깃펜 4</span></td><td class="p-2 text-center">20</td></tr>
-                                    <tr><td class="p-2">차 향이 은은하다</td><td class="p-2">서 5 / <span class="text-brand-600 font-bold">[추천] 서 10</span></td><td class="p-2 text-center">15</td></tr>
-                                    <tr><td class="p-2">현자가 눈을 감고 있다</td><td class="p-2">잉크 3 / <span class="text-brand-600 font-bold">[추천] 서 10</span></td><td class="p-2 text-center">20</td></tr>
+                                    <tr><td class="p-2">차 향이 은은하다</td><td class="p-2">숙련 5 / <span class="text-brand-600 font-bold">[추천] 숙련 10</span></td><td class="p-2 text-center">15</td></tr>
+                                    <tr><td class="p-2">현자가 눈을 감고 있다</td><td class="p-2">잉크 3 / <span class="text-brand-600 font-bold">[추천] 숙련 10</span></td><td class="p-2 text-center">20</td></tr>
                                     <tr><td class="p-2 font-bold">현자가 미소를 짓는다</td><td class="p-2"><span class="text-purple-500 font-bold">[추천] 알테리온 표식 1</span> / ?</td><td class="p-2 text-center font-bold">30</td></tr>
                                 </tbody>
                             </table>
