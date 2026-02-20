@@ -231,7 +231,7 @@
 </head>
 <body class="bg-pattern min-h-screen text-gray-800 transition-colors duration-300 dark:text-gray-100 font-sans overflow-x-hidden readable-text">
 
-    <!-- PASSWORD LOGIN OVERLAY (Option 1) -->
+    <!-- PASSWORD LOGIN OVERLAY -->
     <div id="login-overlay">
         <div class="login-card relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-1 bg-brand-500"></div>
@@ -500,19 +500,20 @@
             <h2 class="text-3xl font-display mb-6 md:mb-8 text-gray-800 dark:text-white">일정 및 미션</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- 뽑기 순서 -->
+                <!-- 뽑기 순서 (업데이트 완료) -->
                 <div class="glass-card rounded-3xl p-6">
                     <h3 class="font-bold text-xl mb-4 text-blue-600 flex items-center"><i class="fas fa-sync-alt mr-2"></i>주간 뽑기 순서</h3>
                     <div class="space-y-6">
                         <div>
                             <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded mb-2 inline-block">신화 (1주 간격)</span>
                             <ol class="space-y-2 text-sm md:text-base text-gray-700 dark:text-gray-300">
-                                <li>1. 잭모어 ➔ 우가루스 ➔ 럭스 ➔ 파이로스</li>
-                                <li>2. 아카네코 ➔ 카르툰 ➔ 라이칸</li>
-                                <li>3. 오라클 ➔ 캣틀쉽 ➔ 쿠무루</li>
-                                <li>4. 이블리스 ➔ 페페 ➔ 메카네코 ➔ 테론</li>
-                                <li>5. 샤크스톤 ➔ 펜리르 ➔ 보안관잭</li>
-                                <li>6. 샤크프릿 ➔ 잭블루 ➔ 미르크 ➔ 블래스트</li>
+                                <li>1. 라이칸 ➔ 오라클 ➔ 옥타리온 ➔ 캣틀쉽</li>
+                                <li>2. 쿠무루 ➔ 테론 ➔ 이블리스 ➔ 페페</li>
+                                <li>3. 메카네코 ➔ 보안관잭 ➔ 샤크스톤 ➔ 펜리르</li>
+                                <li>4. 잭모어 ➔ 샤크프릿 ➔ 잭블루 ➔ 미르크</li>
+                                <li>5. 블래스트 ➔ 우가루스 ➔ 럭스 ➔ 파이로스</li>
+                                <li>6. 아카네코 ➔ 카르툰 ➔ 라이칸 ➔ 오라클</li>
+                                <li>7. 옥타리온 ➔ 캣틀쉽 ➔ 쿠무루 ➔ 테론</li>
                             </ol>
                         </div>
                         <div class="border-t border-dashed border-gray-300 pt-4">
@@ -527,7 +528,7 @@
                     </div>
                 </div>
 
-                <!-- 합성 미션 (FULL DETAIL) -->
+                <!-- 합성 미션 -->
                 <div class="glass-card rounded-3xl p-6 border-t-4 border-green-500">
                     <h3 class="font-bold text-xl mb-4 text-green-600 flex items-center"><i class="fas fa-check-circle mr-2"></i>합성 이벤트 미션</h3>
                     <div class="space-y-4 text-xs md:text-sm h-[500px] overflow-y-auto pr-2 custom-scrollbar">
@@ -603,7 +604,7 @@
             </div>
         </section>
 
-        <!-- 2. 성장/VIP (FULL TABLE RESTORED) -->
+        <!-- 2. 성장/VIP -->
         <section id="growth" class="hidden page-enter">
             <button onclick="goHome()" class="mb-4 flex items-center gap-2 text-gray-500 hover:text-brand-500 transition-colors">
                 <i class="fas fa-arrow-left"></i> <span class="font-bold text-sm">뒤로가기</span>
@@ -611,7 +612,7 @@
             <h2 class="text-3xl font-display mb-6 text-gray-800 dark:text-white">성장 & VIP</h2>
 
             <div class="grid grid-cols-1 gap-6 mb-8">
-                <!-- VIP 표 (FULL) -->
+                <!-- VIP 표 -->
                 <div class="glass-card p-6 rounded-3xl overflow-hidden">
                     <h3 class="font-bold text-lg mb-4">VIP 등급 혜택 (전체)</h3>
                     <div class="overflow-x-auto">
@@ -695,7 +696,7 @@
                 </div>
             </div>
 
-            <!-- 신화/전설 각성 수치 정보 (UPDATED & MATCHED SIZE) -->
+            <!-- 신화/전설 각성 수치 정보 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 <!-- 신화 각성 수치 -->
                 <div class="glass-card p-6 rounded-3xl border-t-4 border-red-500 h-full flex flex-col">
@@ -799,7 +800,7 @@
                 </div>
             </div>
 
-            <!-- 다이아몬드, 대포, 연구 순위 추가 -->
+            <!-- 다이아몬드, 대포, 연구 순위 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 <!-- 다이아몬드 사용처 -->
                 <div class="glass-card p-6 rounded-3xl border-l-4 border-cyan-500">
@@ -979,7 +980,7 @@
                         </div>
                         <div class="bg-gray-900 rounded-xl p-6 text-center"><div id="calc-result" class="text-4xl font-bold text-white">85,500 점</div></div>
                         
-                        <!-- Info Box (RESTORED) -->
+                        <!-- Info Box -->
                         <div class="bg-gray-100 dark:bg-gray-700/50 rounded-xl p-4 text-sm text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 mt-4">
                             <div class="flex items-center gap-2 font-semibold text-indigo-600 dark:text-indigo-300 mb-2">
                                 <i class="fas fa-info-circle"></i>
@@ -1003,7 +1004,7 @@
             </div>
         </section>
 
-        <!-- NEW: 시스템 공략 (Merged Section with Folder Navigation) -->
+        <!-- 시스템 공략 -->
         <section id="systems" class="hidden page-enter">
             <div class="flex items-center justify-between mb-6">
                 <button onclick="goHome()" class="flex items-center gap-2 text-gray-500 hover:text-brand-500 transition-colors">
@@ -1225,7 +1226,7 @@
                     </div>
                 </div>
 
-                <!-- 도전의 탑 상세 (RESTORED & EXPANDED) -->
+                <!-- 도전의 탑 상세 -->
                 <div id="tower" class="glass-card p-6 rounded-3xl border-l-4 border-orange-500 scroll-mt-24">
                     <h3 class="font-bold text-xl mb-4 text-orange-600 flex items-center"><i class="fas fa-dungeon mr-2"></i>도전의 탑 상세 공략</h3>
                     <div class="space-y-6 text-sm text-gray-700 dark:text-gray-300">
@@ -1261,7 +1262,7 @@
                             </div>
                         </div>
 
-                        <!-- 나머지 덱 (TBA) -->
+                        <!-- 나머지 덱 -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-center">
                             <div class="p-3 bg-yellow-50 dark:bg-yellow-900/10 rounded-xl border border-dashed border-yellow-300 text-yellow-700 dark:text-yellow-500 opacity-70">
                                 <i class="fas fa-cat mb-1"></i><br>고양이 덱<br><span class="text-[10px]">업데이트 예정</span>
@@ -1315,7 +1316,7 @@
                     </div>
                 </div>
 
-                <!-- Hidden Trophies (NEW) -->
+                <!-- 히든 트로피 -->
                 <div id="trophy" class="glass-card p-6 rounded-3xl border-l-4 border-yellow-400 scroll-mt-24">
                     <h3 class="font-bold text-xl mb-4 text-yellow-500 flex items-center"><i class="fas fa-trophy mr-2"></i>히든 트로피</h3>
                     
@@ -1553,7 +1554,7 @@
                     members: '이블리스, 아카네코, 메카네코, 룰루, 베스퍼, 스타링',
                     skills: '발도술, 캣히어로즈, 사신의 계약, 종말의탄환, 해적표식, 마법방패',
                     runes: '발도술강화, 캣히어로즈강화, 종말의탄환강화, 해적표식강화',
-                    desc: '극단적 PvP 덱. 동스펙 기준 최강. (누가 이길건데 ㅋ)',
+                    desc: '극단적 PvP 덱. 동스펙 기준 최강.',
                     score: { pve: 1, pvp: 5, cost: 5 },
                     type: 'cat'
                 },
@@ -1678,7 +1679,6 @@
              const element = document.getElementById(elementId);
              if (element) {
                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                 // Add a highlight effect
                  element.classList.add('ring-4', 'ring-brand-500', 'transition-all', 'duration-500');
                  setTimeout(() => {
                      element.classList.remove('ring-4', 'ring-brand-500');
